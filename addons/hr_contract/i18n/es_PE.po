@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-14 10:27+0000\n"
-"PO-Revision-Date: 2015-09-07 20:31+0000\n"
+"POT-Creation-Date: 2015-09-18 08:11+0000\n"
+"PO-Revision-Date: 2016-02-09 23:14+0000\n"
 "Last-Translator: Martin Trigaux\n"
 "Language-Team: Spanish (Peru) (http://www.transifex.com/odoo/odoo-9/language/es_PE/)\n"
 "MIME-Version: 1.0\n"
@@ -16,6 +16,11 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Language: es_PE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: hr_contract
+#: model:ir.model.fields,field_description:hr_contract.field_hr_contract_message_needaction
+msgid "Action Needed"
+msgstr "Se Necesita Acción"
 
 #. module: hr_contract
 #: model:ir.model,name:hr_contract.model_base_action_rule
@@ -136,7 +141,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_contract.field_hr_contract_display_name
 #: model:ir.model.fields,field_description:hr_contract.field_hr_contract_type_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nombre a Mostrar"
 
 #. module: hr_contract
 #: model:ir.ui.view,arch_db:hr_contract.hr_contract_view_form
@@ -213,14 +218,13 @@ msgid "ID"
 msgstr "ID"
 
 #. module: hr_contract
-#: model:ir.model.fields,help:hr_contract.field_hr_contract_message_needaction
 #: model:ir.model.fields,help:hr_contract.field_hr_contract_message_unread
 msgid "If checked new messages require your attention."
 msgstr ""
 
 #. module: hr_contract
-#: model:ir.ui.view,arch_db:hr_contract.hr_contract_view_search
-msgid "Important Messages"
+#: model:ir.model.fields,help:hr_contract.field_hr_contract_message_needaction
+msgid "If checked, new messages require your attention."
 msgstr ""
 
 #. module: hr_contract
@@ -262,7 +266,7 @@ msgstr "Fecha del último mensaje"
 #: model:ir.model.fields,field_description:hr_contract.field_hr_contract___last_update
 #: model:ir.model.fields,field_description:hr_contract.field_hr_contract_type___last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Ultima Modificación en"
 
 #. module: hr_contract
 #: model:ir.model.fields,field_description:hr_contract.field_hr_contract_type_write_uid
@@ -302,16 +306,6 @@ msgid "Messages and communication history"
 msgstr ""
 
 #. module: hr_contract
-#: model:ir.model.fields,field_description:hr_contract.field_hr_contract_message_needaction
-msgid "Need Action"
-msgstr ""
-
-#. module: hr_contract
-#: model:ir.model.fields,field_description:hr_contract.field_hr_contract_message_needaction_counter
-msgid "Need Action Counter"
-msgstr ""
-
-#. module: hr_contract
 #: selection:hr.contract,state:0
 msgid "New"
 msgstr "Nuevo"
@@ -320,6 +314,11 @@ msgstr "Nuevo"
 #: model:ir.model.fields,field_description:hr_contract.field_hr_contract_notes
 #: model:ir.ui.view,arch_db:hr_contract.hr_contract_view_form
 msgid "Notes"
+msgstr "Notas"
+
+#. module: hr_contract
+#: model:ir.model.fields,field_description:hr_contract.field_hr_contract_message_needaction_counter
+msgid "Number of Actions"
 msgstr ""
 
 #. module: hr_contract
@@ -329,7 +328,7 @@ msgstr ""
 
 #. module: hr_contract
 #: model:ir.model.fields,help:hr_contract.field_hr_contract_message_needaction_counter
-msgid "Number of needaction messages"
+msgid "Number of messages which requires an action"
 msgstr ""
 
 #. module: hr_contract
@@ -371,7 +370,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_contract.field_hr_contract_type_sequence
 #: model:ir.ui.view,arch_db:hr_contract.hr_contract_type_view_search
 msgid "Sequence"
-msgstr ""
+msgstr "Secuencia"
 
 #. module: hr_contract
 #: model:ir.model.fields,field_description:hr_contract.field_hr_contract_date_start
@@ -381,7 +380,7 @@ msgstr ""
 #. module: hr_contract
 #: model:ir.model.fields,field_description:hr_contract.field_hr_contract_state
 msgid "Status"
-msgstr ""
+msgstr "Estado"
 
 #. module: hr_contract
 #: model:ir.model.fields,help:hr_contract.field_hr_contract_state
@@ -412,6 +411,7 @@ msgstr ""
 
 #. module: hr_contract
 #: model:ir.model.fields,field_description:hr_contract.field_hr_contract_message_unread
+#: model:ir.ui.view,arch_db:hr_contract.hr_contract_view_search
 msgid "Unread Messages"
 msgstr "Mensajes no leidos"
 

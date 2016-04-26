@@ -36,6 +36,9 @@ function get_fc_defaultOptions() {
         dayNames: moment.weekdays(),
         dayNamesShort: moment.weekdaysShort(),
         firstDay: moment._locale._week.dow,
+        weekNumberCalculation: function(date) {
+            return moment(date).week();
+        },
         weekNumbers: true,
         titleFormat: {
             month: 'MMMM yyyy',
@@ -83,6 +86,9 @@ var CalendarView = View.extend({
         this.title = (this.options.action)? this.options.action.name : '';
 
         this.shown = $.Deferred();
+        self.current_start = null;
+        self.current_end = null;
+        self.previous_ids = [];
     },
 
     set_default_options: function(options) {
@@ -288,7 +294,16 @@ var CalendarView = View.extend({
                 var title = self.title + ' (' + ((mode === "week")? _t("Week ") : "") + view.title + ")"; 
                 self.set({'title': title});
 
-                self.$calendar.fullCalendar('option', 'height', parseInt(self.$('.o_calendar_view').height()));
+                self.$calendar.fullCalendar('option', 'height', Math.max(290, parseInt(self.$('.o_calendar_view').height())));
+
+                setTimeout(function() {
+                    var $fc_view = self.$calendar.find('.fc-view');
+                    var width = $fc_view.find('> table').width();
+                    $fc_view.find('> div').css('width', (width > $fc_view.width())? width : '100%'); // 100% = fullCalendar default
+                }, 0);
+            },
+            windowResize: function() {
+                self.$calendar.fullCalendar('render');
             },
             eventDrop: function (event, _day_delta, _minute_delta, _all_day, _revertFunc) {
                 var data = self.get_event_data(event);
@@ -360,7 +375,9 @@ var CalendarView = View.extend({
 
         return $.when();
     },
-    extraSideBar: function() {},
+    extraSideBar: function() {
+        return $.when();
+    },
 
     get_quick_create_class: function () {
         return widgets.QuickCreate;
@@ -414,7 +431,11 @@ var CalendarView = View.extend({
                     });
                     self.$calendar.fullCalendar('updateEvent', event_obj);
                 } else { // New event object to create
+                    var $fc_view = self.$calendar.find('.fc-view');
+                    var scrollPosition = $fc_view.scrollLeft();
+                    $fc_view.scrollLeft(0);
                     self.$calendar.fullCalendar('renderEvent', new_event);
+                    $fc_view.scrollLeft(scrollPosition);
                     // By forcing attribution of this event to this source, we
                     // make sure that the event will be removed when the source
                     // will be removed (which occurs at each do_search)
@@ -517,6 +538,9 @@ var CalendarView = View.extend({
                     else if (value instanceof Array) {
                         temp_ret[fieldname] = value[1]; // no name_get to make
                     }
+                    else if (_.contains(["date", "datetime"], self.fields[fieldname].type)) {
+                        temp_ret[fieldname] = instance.web.format_value(value, self.fields[fieldname]);
+                    }
                     else {
                         throw new Error("Incomplete data received from dataset for record " + evt.id);
                     }
@@ -612,7 +636,7 @@ var CalendarView = View.extend({
                 r.className = 'o_calendar_color_'+ this.get_color(color_key);
             }
         } else { // if form all, get color -1
-            r.className = 'o_calendar_color_'+ self.all_filters[-1].color;
+            r.className = 'o_calendar_color_'+ (self.all_filters[-1] ? self.all_filters[-1].color : 1);
         }
         return r;
     },
@@ -699,11 +723,35 @@ var CalendarView = View.extend({
                 }
 
                 var current_event_source = self.event_source;
+                    var event_domain = self.get_range_domain(domain, start, end);
+                    if (self.useContacts && (!self.all_filters[-1] || !self.all_filters[-1].is_checked)) {
+                        var partner_ids = $.map(self.all_filters, function(o) { if (o.is_checked) { return o.value; }});
+                        if (!_.isEmpty(partner_ids)) {
+                            event_domain = new data.CompoundDomain(
+                                event_domain,
+                                [[self.attendee_people, 'in', partner_ids]]
+                            );
+                        }
+                    }
+
+                // read_slice is launched uncoditionally, when quickly
+                // changing the range in the calender view, all of
+                // these RPC calls will race each other. Because of
+                // this we keep track of the current range of the
+                // calendar view.
+                self.current_start = start;
+                self.current_end = end;
                 self.dataset.read_slice(_.keys(self.fields), {
                     offset: 0,
-                    domain: self.get_range_domain(domain, start, end),
+                    domain: event_domain,
                     context: context,
                 }).done(function(events) {
+                    // undo the read_slice if it the range has changed since it launched
+                    if (self.current_start.getTime() != start.getTime() || self.current_end.getTime() != end.getTime()) {
+                        self.dataset.ids = self.previous_ids;
+                        return;
+                    }
+                    self.previous_ids = self.dataset.ids.slice();
                     if (self.dataset.index === null) {
                         if (events.length) {
                             self.dataset.index = 0;
@@ -761,21 +809,6 @@ var CalendarView = View.extend({
                         }
 
                     }
-                    else { //WE USE CONTACT
-                        if (self.attendee_people !== undefined) {
-                            //if we don't filter on 'Everybody's Calendar
-                            if (!self.all_filters[-1] || !self.all_filters[-1].is_checked) {
-                                var checked_filter = $.map(self.all_filters, function(o) { if (o.is_checked) { return o.value; }});
-                                // If we filter on contacts... we keep only events from coworkers
-                                events = $.map(events, function (e) {
-                                    if (_.intersection(checked_filter,e[self.attendee_people]).length) {
-                                        return e;
-                                    }
-                                    return null;
-                                });
-                            }
-                        }
-                    }
                     var all_attendees = $.map(events, function (e) { return e[self.attendee_people]; });
                     all_attendees = _.chain(all_attendees).flatten().uniq().value();
 
@@ -810,24 +843,23 @@ var CalendarView = View.extend({
     get_range_domain: function(domain, start, end) {
         var format = time.date_to_str;
         
-        var extend_domain = [[this.date_start, '>=', format(start)],
-                 [this.date_start, '<=', format(end)]];
+        var extend_domain = [[this.date_start, '<=', format(end)]];
 
         if (this.date_stop) {
-            //add at start 
-            extend_domain.splice(0,0,'|','|','&');
-            //add at end 
             extend_domain.push(
-                            '&',
-                            [this.date_start, '<=', format(start)],
-                            [this.date_stop, '>=', format(start)],
-                            '&',
-                            [this.date_start, '<=', format(end)],
-                            [this.date_stop, '>=', format(start)]
+                    [this.date_stop, '>=', format(start)]
             );
-            //final -> (A & B) | (C & D) | (E & F) ->  | | & A B & C D & E F
         }
         return new CompoundDomain(domain, extend_domain);
+    },
+
+    /**
+     * Get all_filters ordered by label
+     */
+    get_all_filters_ordered: function() {
+        return _.values(this.all_filters).sort(function(f1,f2) {
+            return _.string.naturalCmp(f1.label, f2.label);
+        });
     },
 
     /**
@@ -840,7 +872,7 @@ var CalendarView = View.extend({
         var index = this.dataset.get_id_index(id);
         if (index !== null) {
             event_id = this.dataset.ids[index];
-            this.dataset.write(event_id, data, {}).done(function() {
+            this.dataset.write(event_id, data, {}).always(function() {
                 if (is_virtual_id(event_id)) {
                     // this is a virtual ID and so this will create a new event
                     // with an unknown id for us.

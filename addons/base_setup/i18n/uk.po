@@ -3,13 +3,15 @@
 # * base_setup
 # 
 # Translators:
+# Bohdan Lisnenko, 2015-2016
+# Bohdan Lisnenko, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-07 14:40+0000\n"
-"PO-Revision-Date: 2015-09-07 16:39+0000\n"
-"Last-Translator: Martin Trigaux\n"
+"POT-Creation-Date: 2015-09-29 10:25+0000\n"
+"PO-Revision-Date: 2016-04-23 11:44+0000\n"
+"Last-Translator: Bohdan Lisnenko\n"
 "Language-Team: Ukrainian (http://www.transifex.com/odoo/odoo-9/language/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,29 +20,24 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #. module: base_setup
-#: model:ir.ui.view,arch_db:base_setup.view_general_configuration
-msgid "(reload fonts)"
-msgstr ""
-
-#. module: base_setup
 #: model:ir.model.fields,field_description:base_setup.field_base_config_settings_module_portal
 msgid "Activate the customer portal"
-msgstr ""
+msgstr "Активувати портал для клієнтів"
 
 #. module: base_setup
 #: model:ir.model.fields,field_description:base_setup.field_base_config_settings_module_share
 msgid "Allow documents sharing"
-msgstr ""
+msgstr "Дозволити поширення документів"
 
 #. module: base_setup
 #: model:ir.model.fields,field_description:base_setup.field_base_config_settings_module_google_calendar
 msgid "Allow the users to synchronize their calendar  with Google Calendar"
-msgstr ""
+msgstr "Дозволити користувачам синхронізувати календар з Google календарем."
 
 #. module: base_setup
 #: model:ir.model.fields,field_description:base_setup.field_base_config_settings_module_base_import
 msgid "Allow users to import data from CSV/XLS/XLSX/ODS files"
-msgstr ""
+msgstr "Дозволити користувачам імпортувати дані з файлів CSV/XLS/XLSX/ODS"
 
 #. module: base_setup
 #: model:ir.ui.view,arch_db:base_setup.view_general_configuration
@@ -51,7 +48,7 @@ msgstr "Застосувати"
 #. module: base_setup
 #: model:ir.model.fields,field_description:base_setup.field_base_config_settings_module_google_drive
 msgid "Attach Google documents to any record"
-msgstr ""
+msgstr "Долучати Google документи до буль-якого запису"
 
 #. module: base_setup
 #: model:ir.ui.view,arch_db:base_setup.view_general_configuration
@@ -62,59 +59,59 @@ msgstr "Призначення"
 #: model:ir.ui.view,arch_db:base_setup.view_general_configuration
 #: model:ir.ui.view,arch_db:base_setup.view_sale_config_settings
 msgid "Cancel"
-msgstr "Cancel"
+msgstr "Скасувати"
 
 #. module: base_setup
 #: selection:base.setup.terminology,partner:0
 msgid "Client"
-msgstr ""
+msgstr "Клієнт"
 
 #. module: base_setup
 #: model:ir.actions.act_window,name:base_setup.action_sale_config
 #: model:ir.ui.view,arch_db:base_setup.view_sale_config_settings
 msgid "Configure Sales"
-msgstr ""
+msgstr "Налаштувати продаж"
 
 #. module: base_setup
 #: model:ir.ui.view,arch_db:base_setup.view_general_configuration
 msgid "Configure outgoing email servers"
-msgstr ""
+msgstr "Налаштувати сервери вихідної пошти"
 
 #. module: base_setup
 #: model:ir.ui.view,arch_db:base_setup.view_general_configuration
 msgid "Configure your company data"
-msgstr ""
+msgstr "Налаштувати дані про мою компанію"
 
 #. module: base_setup
 #: model:ir.model.fields,field_description:base_setup.field_base_config_settings_create_uid
 #: model:ir.model.fields,field_description:base_setup.field_base_setup_terminology_create_uid
 #: model:ir.model.fields,field_description:base_setup.field_sale_config_settings_create_uid
 msgid "Created by"
-msgstr "Created by"
+msgstr "Створив"
 
 #. module: base_setup
 #: model:ir.model.fields,field_description:base_setup.field_base_config_settings_create_date
 #: model:ir.model.fields,field_description:base_setup.field_base_setup_terminology_create_date
 #: model:ir.model.fields,field_description:base_setup.field_sale_config_settings_create_date
 msgid "Created on"
-msgstr "Created on"
+msgstr "Дата створення"
 
 #. module: base_setup
 #: selection:base.setup.terminology,partner:0
 msgid "Customer"
-msgstr "Покупець"
+msgstr "Клієнт"
 
 #. module: base_setup
 #: model:ir.model.fields,field_description:base_setup.field_base_config_settings_display_name
 #: model:ir.model.fields,field_description:base_setup.field_base_setup_terminology_display_name
 #: model:ir.model.fields,field_description:base_setup.field_sale_config_settings_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Показати ім'я"
 
 #. module: base_setup
 #: selection:base.setup.terminology,partner:0
 msgid "Donor"
-msgstr ""
+msgstr "Донор"
 
 #. module: base_setup
 #: model:ir.ui.view,arch_db:base_setup.view_general_configuration
@@ -125,44 +122,44 @@ msgstr "Email"
 #: model:ir.actions.act_window,name:base_setup.action_general_configuration
 #: model:ir.ui.view,arch_db:base_setup.view_general_configuration
 msgid "General Settings"
-msgstr "Загальний опис"
+msgstr "Загальні налаштування"
 
 #. module: base_setup
 #: model:ir.model.fields,help:base_setup.field_base_config_settings_module_portal
 msgid "Give your customers access to their documents."
-msgstr ""
+msgstr "Надати вашим клієнтам доступ до їх документів"
 
 #. module: base_setup
 #: model:ir.ui.view,arch_db:base_setup.view_general_configuration
 msgid "Google Calendar"
-msgstr ""
+msgstr "Google Календар"
 
 #. module: base_setup
 #: model:ir.ui.view,arch_db:base_setup.view_general_configuration
 msgid "Google Drive"
-msgstr ""
+msgstr "Google диск"
 
 #. module: base_setup
 #: model:ir.ui.view,arch_db:base_setup.view_general_configuration
 msgid "Google Integration"
-msgstr ""
+msgstr "Інтеграція з Google"
 
 #. module: base_setup
 #: selection:base.setup.terminology,partner:0
 msgid "Guest"
-msgstr ""
+msgstr "Гість"
 
 #. module: base_setup
 #: model:ir.model.fields,field_description:base_setup.field_base_setup_terminology_partner
 msgid "How do you call a Customer"
-msgstr ""
+msgstr "Як ви називаєте клієнта"
 
 #. module: base_setup
 #: model:ir.model.fields,field_description:base_setup.field_base_config_settings_id
 #: model:ir.model.fields,field_description:base_setup.field_base_setup_terminology_id
 #: model:ir.model.fields,field_description:base_setup.field_sale_config_settings_id
 msgid "ID"
-msgstr "ІД"
+msgstr "ID"
 
 #. module: base_setup
 #: model:ir.ui.view,arch_db:base_setup.view_general_configuration
@@ -179,21 +176,21 @@ msgstr ""
 #: model:ir.model.fields,field_description:base_setup.field_base_setup_terminology___last_update
 #: model:ir.model.fields,field_description:base_setup.field_sale_config_settings___last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Остання модифікація"
 
 #. module: base_setup
 #: model:ir.model.fields,field_description:base_setup.field_base_config_settings_write_uid
 #: model:ir.model.fields,field_description:base_setup.field_base_setup_terminology_write_uid
 #: model:ir.model.fields,field_description:base_setup.field_sale_config_settings_write_uid
 msgid "Last Updated by"
-msgstr "Last Updated by"
+msgstr "Востаннє оновив"
 
 #. module: base_setup
 #: model:ir.model.fields,field_description:base_setup.field_base_config_settings_write_date
 #: model:ir.model.fields,field_description:base_setup.field_base_setup_terminology_write_date
 #: model:ir.model.fields,field_description:base_setup.field_sale_config_settings_write_date
 msgid "Last Updated on"
-msgstr "Last Updated on"
+msgstr "Останнє оновлення"
 
 #. module: base_setup
 #: model:ir.model.fields,field_description:base_setup.field_base_config_settings_module_inter_company_rules
@@ -208,7 +205,7 @@ msgstr ""
 #. module: base_setup
 #: selection:base.setup.terminology,partner:0
 msgid "Member"
-msgstr ""
+msgstr "Учасник"
 
 #. module: base_setup
 #: model:ir.ui.view,arch_db:base_setup.view_general_configuration
@@ -223,14 +220,9 @@ msgid ""
 msgstr ""
 
 #. module: base_setup
-#: model:ir.ui.view,arch_db:base_setup.view_general_configuration
-msgid "Options"
-msgstr "Опції"
-
-#. module: base_setup
 #: selection:base.setup.terminology,partner:0
 msgid "Partner"
-msgstr "Partner"
+msgstr "Партнер"
 
 #. module: base_setup
 #: selection:base.setup.terminology,partner:0
@@ -240,19 +232,7 @@ msgstr ""
 #. module: base_setup
 #: model:ir.ui.view,arch_db:base_setup.view_general_configuration
 msgid "Portal access"
-msgstr ""
-
-#. module: base_setup
-#: model:ir.model.fields,field_description:base_setup.field_base_config_settings_font
-msgid "Report Font"
-msgstr ""
-
-#. module: base_setup
-#: model:ir.model.fields,help:base_setup.field_base_config_settings_font
-msgid ""
-"Set the font into the report header, it will be used as default font in the "
-"RML reports of the user company"
-msgstr ""
+msgstr "Доступ до порталу"
 
 #. module: base_setup
 #: model:ir.model.fields,help:base_setup.field_base_config_settings_module_share
@@ -274,7 +254,7 @@ msgstr ""
 
 #. module: base_setup
 #: model:ir.ui.view,arch_db:base_setup.view_general_configuration
-msgid "Shared ressources"
+msgid "Shared resources"
 msgstr ""
 
 #. module: base_setup
@@ -348,7 +328,7 @@ msgstr ""
 #. module: base_setup
 #: model:ir.model,name:base_setup.model_base_config_settings
 msgid "base.config.settings"
-msgstr ""
+msgstr "base.config.settings"
 
 #. module: base_setup
 #: model:ir.model,name:base_setup.model_base_setup_terminology

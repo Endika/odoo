@@ -3,13 +3,14 @@
 # * event
 # 
 # Translators:
+# Dejan Sraka <dejan.sraka@picolabs.si>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-14 10:27+0000\n"
-"PO-Revision-Date: 2015-09-10 15:13+0000\n"
-"Last-Translator: Martin Trigaux\n"
+"POT-Creation-Date: 2015-10-01 06:27+0000\n"
+"PO-Revision-Date: 2016-03-27 20:49+0000\n"
+"Last-Translator: Dejan Sraka <dejan.sraka@picolabs.si>\n"
 "Language-Team: Slovenian (http://www.transifex.com/odoo/odoo-9/language/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,7 +21,7 @@ msgstr ""
 #. module: event
 #: model:ir.model.fields,field_description:event.field_report_event_registration_cancel_state
 msgid " # No of Cancelled Registrations"
-msgstr ""
+msgstr " # število preklicanih registracij"
 
 #. module: event
 #: model:ir.model.fields,field_description:event.field_report_event_registration_confirm_state
@@ -210,6 +211,12 @@ msgid "<strong>Where to find us:</strong>"
 msgstr ""
 
 #. module: event
+#: model:ir.model.fields,field_description:event.field_event_event_message_needaction
+#: model:ir.model.fields,field_description:event.field_event_registration_message_needaction
+msgid "Action Needed"
+msgstr "Potreben je ukrep"
+
+#. module: event
 #: model:ir.model.fields,field_description:event.field_event_event_active
 msgid "Active"
 msgstr "Aktivno"
@@ -259,7 +266,7 @@ msgstr "Uporabi"
 #. module: event
 #: model:ir.ui.view,arch_db:event.view_event_search
 msgid "Archived"
-msgstr ""
+msgstr "Arhivirano"
 
 #. module: event
 #: model:event.event,description:event.event_0
@@ -311,16 +318,6 @@ msgstr ""
 #: model:ir.ui.view,arch_db:event.view_event_form
 msgid "Attendees"
 msgstr "Udeleženci"
-
-#. module: event
-#: model:ir.ui.view,arch_db:event.view_event_kanban
-msgid "Attendees confirmed"
-msgstr ""
-
-#. module: event
-#: model:ir.ui.view,arch_db:event.view_event_kanban
-msgid "Attendees expected"
-msgstr ""
 
 #. module: event
 #: model:ir.model.fields,field_description:event.field_event_config_settings_auto_confirmation
@@ -506,6 +503,11 @@ msgid "Confirmed"
 msgstr "Potrjeno"
 
 #. module: event
+#: model:ir.ui.view,arch_db:event.view_event_kanban
+msgid "Confirmed attendees"
+msgstr ""
+
+#. module: event
 #: model:ir.ui.view,arch_db:event.view_event_search
 msgid "Confirmed events"
 msgstr "Potrjeni dogodki"
@@ -532,6 +534,13 @@ msgstr "Država"
 #: model:event.event,description:event.event_1
 #: model:event.event,description:event.event_3
 msgid "Course Summary"
+msgstr ""
+
+#. module: event
+#: model:web.tip,description:event.event_tip_1
+msgid ""
+"Create and manage registrations for this event, send emails to attendees and"
+" print identification badges."
 msgstr ""
 
 #. module: event
@@ -642,7 +651,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:event.field_event_type_display_name
 #: model:ir.model.fields,field_description:event.field_report_event_registration_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Prikaz naziva"
 
 #. module: event
 #: model:ir.model.fields,field_description:event.field_event_mail_sequence
@@ -871,6 +880,11 @@ msgid "Expected"
 msgstr "Pričakovano"
 
 #. module: event
+#: model:ir.ui.view,arch_db:event.view_event_kanban
+msgid "Expected attendees"
+msgstr ""
+
+#. module: event
 #: model:ir.ui.view,arch_db:event.view_report_event_registration_search
 msgid "Extended Filters..."
 msgstr "Razširjeni filtri..."
@@ -890,13 +904,13 @@ msgstr "Sledilci"
 #: model:ir.model.fields,field_description:event.field_event_event_message_channel_ids
 #: model:ir.model.fields,field_description:event.field_event_registration_message_channel_ids
 msgid "Followers (Channels)"
-msgstr ""
+msgstr "Sledilci (kanali)"
 
 #. module: event
 #: model:ir.model.fields,field_description:event.field_event_event_message_partner_ids
 #: model:ir.model.fields,field_description:event.field_event_registration_message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "Sledilci (partnerji)"
 
 #. module: event
 #: model:event.event,description:event.event_2
@@ -988,11 +1002,15 @@ msgid "ID"
 msgstr "ID"
 
 #. module: event
-#: model:ir.model.fields,help:event.field_event_event_message_needaction
 #: model:ir.model.fields,help:event.field_event_event_message_unread
-#: model:ir.model.fields,help:event.field_event_registration_message_needaction
 #: model:ir.model.fields,help:event.field_event_registration_message_unread
 msgid "If checked new messages require your attention."
+msgstr "Če je označeno, zahtevajo nova sporočila vašo pozornost."
+
+#. module: event
+#: model:ir.model.fields,help:event.field_event_event_message_needaction
+#: model:ir.model.fields,help:event.field_event_registration_message_needaction
+msgid "If checked, new messages require your attention."
 msgstr "Če je označeno, zahtevajo nova sporočila vašo pozornost."
 
 #. module: event
@@ -1007,12 +1025,6 @@ msgstr "Ob nastanku je dogodek v stanju 'Osnutek'. Po potrditvi določenih datum
 #. module: event
 #: selection:event.mail,interval_unit:0
 msgid "Immediately"
-msgstr ""
-
-#. module: event
-#: model:ir.ui.view,arch_db:event.view_event_search
-#: model:ir.ui.view,arch_db:event.view_registration_search
-msgid "Important Messages"
 msgstr ""
 
 #. module: event
@@ -1079,7 +1091,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:event.field_event_event_message_is_follower
 #: model:ir.model.fields,field_description:event.field_event_registration_message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "Je sledilec"
 
 #. module: event
 #: model:ir.model.fields,help:event.field_event_type_default_registration_max
@@ -1249,18 +1261,6 @@ msgid "My Events"
 msgstr "Moji Dogotki"
 
 #. module: event
-#: model:ir.model.fields,field_description:event.field_event_event_message_needaction
-#: model:ir.model.fields,field_description:event.field_event_registration_message_needaction
-msgid "Need Action"
-msgstr ""
-
-#. module: event
-#: model:ir.model.fields,field_description:event.field_event_event_message_needaction_counter
-#: model:ir.model.fields,field_description:event.field_event_registration_message_needaction_counter
-msgid "Need Action Counter"
-msgstr ""
-
-#. module: event
 #: model:ir.ui.view,arch_db:event.view_report_event_registration_search
 msgid "New"
 msgstr "Novo"
@@ -1298,6 +1298,12 @@ msgid "No validation step on subscription"
 msgstr ""
 
 #. module: event
+#: model:ir.model.fields,field_description:event.field_event_event_message_needaction_counter
+#: model:ir.model.fields,field_description:event.field_event_registration_message_needaction_counter
+msgid "Number of Actions"
+msgstr "Število aktivnosti"
+
+#. module: event
 #: model:ir.model.fields,field_description:event.field_report_event_registration_nbevent
 msgid "Number of Events"
 msgstr "Število dogodkov"
@@ -1320,14 +1326,14 @@ msgstr "Število prijav"
 #. module: event
 #: model:ir.model.fields,help:event.field_event_event_message_needaction_counter
 #: model:ir.model.fields,help:event.field_event_registration_message_needaction_counter
-msgid "Number of needaction messages"
-msgstr ""
+msgid "Number of messages which requires an action"
+msgstr "Število sporočil, ki zahtevajo dejavnost"
 
 #. module: event
 #: model:ir.model.fields,help:event.field_event_event_message_unread_counter
 #: model:ir.model.fields,help:event.field_event_registration_message_unread_counter
 msgid "Number of unread messages"
-msgstr ""
+msgstr "Število neprebranih sporočil"
 
 #. module: event
 #: model:event.event,description:event.event_0
@@ -1757,6 +1763,8 @@ msgstr "Neomejeno"
 #. module: event
 #: model:ir.model.fields,field_description:event.field_event_event_message_unread
 #: model:ir.model.fields,field_description:event.field_event_registration_message_unread
+#: model:ir.ui.view,arch_db:event.view_event_search
+#: model:ir.ui.view,arch_db:event.view_registration_search
 msgid "Unread Messages"
 msgstr "Neprebrana sporočila"
 
@@ -1764,7 +1772,7 @@ msgstr "Neprebrana sporočila"
 #: model:ir.model.fields,field_description:event.field_event_event_message_unread_counter
 #: model:ir.model.fields,field_description:event.field_event_registration_message_unread_counter
 msgid "Unread Messages Counter"
-msgstr ""
+msgstr "Števec neprebranih sporočil"
 
 #. module: event
 #: model:ir.model.fields,help:event.field_event_config_settings_auto_confirmation
@@ -1805,6 +1813,16 @@ msgid ""
 "Warning: This Event has not reached its Minimum Registration Limit. Are you "
 "sure you want to confirm it?"
 msgstr "Opozorilo: ta dogodek ima premalo prijav. Ali ste prepričani, da ga želite potrditi?"
+
+#. module: event
+#: model:ir.model.fields,field_description:event.field_event_event_website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: event
+#: model:ir.model.fields,help:event.field_event_event_website_message_ids
+msgid "Website communication history"
+msgstr ""
 
 #. module: event
 #: selection:event.mail,interval_unit:0

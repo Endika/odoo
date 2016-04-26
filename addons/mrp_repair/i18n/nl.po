@@ -4,14 +4,15 @@
 # 
 # Translators:
 # Eric Geens <ericgeens@yahoo.com>, 2015
+# Erwin van der Ploeg <erwin@odooexperts.nl>, 2016
 # Yenthe Van Ginneken <yenthespam@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-07 14:42+0000\n"
-"PO-Revision-Date: 2015-09-14 14:13+0000\n"
-"Last-Translator: Yenthe Van Ginneken <yenthespam@gmail.com>\n"
+"POT-Creation-Date: 2015-09-18 08:12+0000\n"
+"PO-Revision-Date: 2016-03-24 19:12+0000\n"
+"Last-Translator: Erwin van der Ploeg <erwin@odooexperts.nl>\n"
 "Language-Team: Dutch (http://www.transifex.com/odoo/odoo-9/language/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -57,7 +58,7 @@ msgstr "<i>(Toevoegen)</i>"
 #. module: mrp_repair
 #: model:ir.ui.view,arch_db:mrp_repair.report_mrprepairorder
 msgid "<strong>Fees Line(s)</strong>"
-msgstr "<strong>Kostenlijn(en)</strong>"
+msgstr "<strong>Kostenregel(s)</strong>"
 
 #. module: mrp_repair
 #: model:ir.ui.view,arch_db:mrp_repair.report_mrprepairorder
@@ -67,7 +68,7 @@ msgstr "<strong>Garantielimiet</strong>"
 #. module: mrp_repair
 #: model:ir.ui.view,arch_db:mrp_repair.report_mrprepairorder
 msgid "<strong>Lot Number</strong>"
-msgstr "<strong>Lotnummer</strong>"
+msgstr "<strong>Partijnummer</strong>"
 
 #. module: mrp_repair
 #: model:ir.ui.view,arch_db:mrp_repair.report_mrprepairorder
@@ -77,7 +78,7 @@ msgstr "<strong>Bewerkingsregel(s)</strong>"
 #. module: mrp_repair
 #: model:ir.ui.view,arch_db:mrp_repair.report_mrprepairorder
 msgid "<strong>Printing Date:</strong>"
-msgstr "<strong>Printdatum:</strong>"
+msgstr "<strong>Afdrukdatum:</strong>"
 
 #. module: mrp_repair
 #: model:ir.ui.view,arch_db:mrp_repair.report_mrprepairorder
@@ -93,6 +94,11 @@ msgstr "<strong>Totaal zonder BTW</strong>"
 #: model:ir.ui.view,arch_db:mrp_repair.report_mrprepairorder
 msgid "<strong>Total</strong>"
 msgstr "<strong>Totaal</strong>"
+
+#. module: mrp_repair
+#: model:ir.model.fields,field_description:mrp_repair.field_mrp_repair_message_needaction
+msgid "Action Needed"
+msgstr "Vereist actie"
 
 #. module: mrp_repair
 #: code:addons/mrp_repair/wizard/cancel_repair.py:24
@@ -335,10 +341,14 @@ msgid "ID"
 msgstr "ID"
 
 #. module: mrp_repair
-#: model:ir.model.fields,help:mrp_repair.field_mrp_repair_message_needaction
 #: model:ir.model.fields,help:mrp_repair.field_mrp_repair_message_unread
 msgid "If checked new messages require your attention."
 msgstr "Indien aangevinkt zullen nieuwe berichten uw aandacht vragen."
+
+#. module: mrp_repair
+#: model:ir.model.fields,help:mrp_repair.field_mrp_repair_message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Indien aangevinkt vragen nieuwe berichten uw aandacht."
 
 #. module: mrp_repair
 #: model:ir.actions.act_window,help:mrp_repair.action_repair_order_tree
@@ -480,16 +490,6 @@ msgid "Move created by the repair order"
 msgstr "Mutatie aangemaakt door reparatie order"
 
 #. module: mrp_repair
-#: model:ir.model.fields,field_description:mrp_repair.field_mrp_repair_message_needaction
-msgid "Need Action"
-msgstr "Vereist actie"
-
-#. module: mrp_repair
-#: model:ir.model.fields,field_description:mrp_repair.field_mrp_repair_message_needaction_counter
-msgid "Need Action Counter"
-msgstr "Teller vereiste acties"
-
-#. module: mrp_repair
 #: selection:mrp.repair,invoice_method:0
 msgid "No Invoice"
 msgstr "Geen factuur"
@@ -531,9 +531,14 @@ msgid "Notes"
 msgstr "Notities"
 
 #. module: mrp_repair
+#: model:ir.model.fields,field_description:mrp_repair.field_mrp_repair_message_needaction_counter
+msgid "Number of Actions"
+msgstr "Aantal acties"
+
+#. module: mrp_repair
 #: model:ir.model.fields,help:mrp_repair.field_mrp_repair_message_needaction_counter
-msgid "Number of needaction messages"
-msgstr "Aantel vereiste actie berichten"
+msgid "Number of messages which requires an action"
+msgstr "Aantal berichten die actie vereisen"
 
 #. module: mrp_repair
 #: model:ir.model.fields,help:mrp_repair.field_mrp_repair_message_unread_counter
@@ -677,8 +682,8 @@ msgstr "Reparatie order"
 
 #. module: mrp_repair
 #: model:ir.ui.view,arch_db:mrp_repair.report_mrprepairorder
-msgid "Repair Order N°:"
-msgstr "Reparatieorder nummer:"
+msgid "Repair Order #:"
+msgstr "Reparatieorder #:"
 
 #. module: mrp_repair
 #: model:ir.model.fields,field_description:mrp_repair.field_mrp_repair_fee_repair_id
@@ -693,8 +698,8 @@ msgstr "Reparatie orders"
 
 #. module: mrp_repair
 #: model:ir.ui.view,arch_db:mrp_repair.report_mrprepairorder
-msgid "Repair Quotation N°:"
-msgstr "Reparatie offerte nummer:"
+msgid "Repair Quotation #:"
+msgstr "Reparatie offerte #:"
 
 #. module: mrp_repair
 #: model:ir.model.fields,field_description:mrp_repair.field_mrp_repair_name

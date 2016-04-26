@@ -3,14 +3,15 @@
 # * analytic
 # 
 # Translators:
+# Andi Chandler <andi@gowling.com>, 2016
 # James Dove <james@oceancave.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-14 10:27+0000\n"
-"PO-Revision-Date: 2015-09-14 11:01+0000\n"
-"Last-Translator: Martin Trigaux\n"
+"POT-Creation-Date: 2015-09-29 10:25+0000\n"
+"PO-Revision-Date: 2016-03-20 23:05+0000\n"
+"Last-Translator: Andi Chandler <andi@gowling.com>\n"
 "Language-Team: English (United Kingdom) (http://www.transifex.com/odoo/odoo-9/language/en_GB/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -32,6 +33,11 @@ msgstr "Account Analytic Chart"
 #: model:ir.model.fields,field_description:analytic.field_account_analytic_line_currency_id
 msgid "Account Currency"
 msgstr "Account Currency"
+
+#. module: analytic
+#: model:ir.model.fields,field_description:analytic.field_account_analytic_account_message_needaction
+msgid "Action Needed"
+msgstr "Action Needed"
 
 #. module: analytic
 #: model:ir.model.fields,field_description:analytic.field_account_analytic_line_amount
@@ -91,17 +97,17 @@ msgstr "Analytic Lines"
 #. module: analytic
 #: model:ir.model.fields,field_description:analytic.field_account_analytic_tag_name
 msgid "Analytic Tag"
-msgstr ""
+msgstr "Analytic Tag"
 
 #. module: analytic
 #: model:ir.model,name:analytic.model_account_analytic_tag
 msgid "Analytic Tags"
-msgstr ""
+msgstr "Analytic Tags"
 
 #. module: analytic
 #: selection:account.analytic.account,account_type:0
 msgid "Analytic View"
-msgstr ""
+msgstr "Analytic View"
 
 #. module: analytic
 #: model:ir.ui.view,arch_db:analytic.view_account_analytic_account_search
@@ -127,17 +133,12 @@ msgstr "Chart of Analytic Accounts"
 #. module: analytic
 #: model:ir.actions.act_window,help:analytic.action_analytic_account_form
 msgid "Click to add an analytic account."
-msgstr ""
-
-#. module: analytic
-#: model:mail.message.subtype,description:analytic.mt_account_closed
-msgid "Closed"
-msgstr "Closed"
+msgstr "Click to add an analytic account."
 
 #. module: analytic
 #: model:ir.model.fields,field_description:analytic.field_account_analytic_tag_color
 msgid "Color Index"
-msgstr ""
+msgstr "Colour Index"
 
 #. module: analytic
 #: model:ir.model.fields,field_description:analytic.field_account_analytic_account_company_id
@@ -146,29 +147,14 @@ msgid "Company"
 msgstr "Company"
 
 #. module: analytic
-#: model:mail.message.subtype,name:analytic.mt_account_closed
-msgid "Contract Finished"
-msgstr ""
-
-#. module: analytic
-#: model:mail.message.subtype,name:analytic.mt_account_opened
-msgid "Contract Opened"
-msgstr ""
-
-#. module: analytic
-#: model:mail.message.subtype,name:analytic.mt_account_pending
-msgid "Contract to Renew"
-msgstr "Contract to Renew"
-
-#. module: analytic
 #: model:ir.ui.view,arch_db:analytic.view_account_analytic_account_form
 msgid "Cost/Revenue"
-msgstr ""
+msgstr "Cost/Turnover"
 
 #. module: analytic
 #: model:ir.actions.act_window,name:analytic.account_analytic_line_action
 msgid "Costs & Revenues"
-msgstr ""
+msgstr "Costs & Revenues"
 
 #. module: analytic
 #: model:ir.actions.act_window,help:analytic.account_analytic_line_action
@@ -176,7 +162,7 @@ msgstr ""
 msgid ""
 "Costs will be created automatically when you register supplier\n"
 "                invoices, expenses or timesheets."
-msgstr ""
+msgstr "Costs will be created automatically when you register supplier\n                invoices, expenses or timesheets."
 
 #. module: analytic
 #: model:ir.model.fields,field_description:analytic.field_account_analytic_account_create_uid
@@ -217,7 +203,7 @@ msgstr "Date"
 #. module: analytic
 #: model:ir.model.fields,help:analytic.field_account_analytic_account_message_last_post
 msgid "Date of the last message posted on the record."
-msgstr ""
+msgstr "Date of the last message posted on the record."
 
 #. module: analytic
 #: model:ir.model.fields,field_description:analytic.field_account_analytic_account_debit
@@ -245,12 +231,12 @@ msgstr "Followers"
 #. module: analytic
 #: model:ir.model.fields,field_description:analytic.field_account_analytic_account_message_channel_ids
 msgid "Followers (Channels)"
-msgstr ""
+msgstr "Followers (Channels)"
 
 #. module: analytic
 #: model:ir.model.fields,field_description:analytic.field_account_analytic_account_message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "Followers (Partners)"
 
 #. module: analytic
 #: model:ir.model.fields,field_description:analytic.field_account_analytic_chart_from_date
@@ -272,10 +258,14 @@ msgid "ID"
 msgstr "ID"
 
 #. module: analytic
-#: model:ir.model.fields,help:analytic.field_account_analytic_account_message_needaction
 #: model:ir.model.fields,help:analytic.field_account_analytic_account_message_unread
 msgid "If checked new messages require your attention."
 msgstr "If checked new messages require your attention."
+
+#. module: analytic
+#: model:ir.model.fields,help:analytic.field_account_analytic_account_message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "If checked, new messages require your attention."
 
 #. module: analytic
 #: model:ir.actions.act_window,help:analytic.account_analytic_line_action
@@ -284,17 +274,17 @@ msgid ""
 "In Odoo, sale orders and projects are implemented using\n"
 "                analytic accounts. You can track costs and revenues to analyse\n"
 "                your margins easily."
-msgstr ""
+msgstr "In Odoo, sale orders and projects are implemented using\n                analytic accounts. You can track costs and revenues to analyse\n                your margins easily."
 
 #. module: analytic
 #: model:ir.model.fields,field_description:analytic.field_account_analytic_account_message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "Is Follower"
 
 #. module: analytic
 #: model:ir.model.fields,field_description:analytic.field_account_analytic_account_message_last_post
 msgid "Last Message Date"
-msgstr ""
+msgstr "Last Message Date"
 
 #. module: analytic
 #: model:ir.model.fields,field_description:analytic.field_account_analytic_account___last_update
@@ -331,34 +321,29 @@ msgid "Messages and communication history"
 msgstr "Messages and communication history"
 
 #. module: analytic
-#: model:ir.model.fields,field_description:analytic.field_account_analytic_account_message_needaction
-msgid "Need Action"
-msgstr ""
-
-#. module: analytic
-#: model:ir.model.fields,field_description:analytic.field_account_analytic_account_message_needaction_counter
-msgid "Need Action Counter"
-msgstr ""
-
-#. module: analytic
 #: model:ir.actions.act_window,help:analytic.account_analytic_line_action
 msgid "No activity yet on this account."
-msgstr ""
+msgstr "No activity yet on this account."
 
 #. module: analytic
 #: model:ir.actions.act_window,help:analytic.account_analytic_line_action_entries
 msgid "No activity yet."
-msgstr ""
+msgstr "No activity yet."
+
+#. module: analytic
+#: model:ir.model.fields,field_description:analytic.field_account_analytic_account_message_needaction_counter
+msgid "Number of Actions"
+msgstr "Number of Actions"
 
 #. module: analytic
 #: model:ir.model.fields,help:analytic.field_account_analytic_account_message_needaction_counter
-msgid "Number of needaction messages"
-msgstr ""
+msgid "Number of messages which requires an action"
+msgstr "Number of messages which requires an action"
 
 #. module: analytic
 #: model:ir.model.fields,help:analytic.field_account_analytic_account_message_unread_counter
 msgid "Number of unread messages"
-msgstr ""
+msgstr "Number of unread messages"
 
 #. module: analytic
 #: model:ir.ui.view,arch_db:analytic.account_analytic_chart_view
@@ -366,19 +351,9 @@ msgid "Open Charts"
 msgstr "Open Charts"
 
 #. module: analytic
-#: model:mail.message.subtype,description:analytic.mt_account_opened
-msgid "Opened"
-msgstr ""
-
-#. module: analytic
 #: model:ir.model.fields,field_description:analytic.field_account_analytic_line_partner_id
 msgid "Partner"
 msgstr "Partner"
-
-#. module: analytic
-#: model:mail.message.subtype,description:analytic.mt_account_pending
-msgid "Pending"
-msgstr "Pending"
 
 #. module: analytic
 #: model:ir.model.fields,field_description:analytic.field_account_analytic_line_unit_amount
@@ -399,7 +374,7 @@ msgid ""
 "                invoices. Customer invoices can be created based on sale orders\n"
 "                (fixed price invoices), on timesheets (based on the work done) or\n"
 "                on expenses (e.g. reinvoicing of travel costs)."
-msgstr ""
+msgstr "Revenues will be created automatically when you create customer\n                invoices. Customer invoices can be created based on sale orders\n                (fixed price invoices), on timesheets (based on the work done) or\n                on expenses (e.g. reinvoicing of travel costs)."
 
 #. module: analytic
 #: model:ir.ui.view,arch_db:analytic.view_account_analytic_line_filter
@@ -420,7 +395,7 @@ msgstr "Labels"
 #. module: analytic
 #: model:ir.ui.view,arch_db:analytic.view_account_analytic_line_filter
 msgid "Tasks Month"
-msgstr ""
+msgstr "Tasks Month"
 
 #. module: analytic
 #: model:ir.model.fields,help:analytic.field_account_analytic_line_currency_id
@@ -440,7 +415,7 @@ msgstr "Total"
 #. module: analytic
 #: model:ir.model.fields,field_description:analytic.field_account_analytic_account_account_type
 msgid "Type of Account"
-msgstr ""
+msgstr "Type of Account"
 
 #. module: analytic
 #: model:ir.model.fields,field_description:analytic.field_account_analytic_account_message_unread
@@ -450,7 +425,7 @@ msgstr "Unread Messages"
 #. module: analytic
 #: model:ir.model.fields,field_description:analytic.field_account_analytic_account_message_unread_counter
 msgid "Unread Messages Counter"
-msgstr ""
+msgstr "Unread Messages Counter"
 
 #. module: analytic
 #: model:ir.model.fields,field_description:analytic.field_account_analytic_line_user_id
@@ -460,4 +435,4 @@ msgstr "User"
 #. module: analytic
 #: model:ir.ui.view,arch_db:analytic.view_account_analytic_account_form
 msgid "e.g. Project XYZ"
-msgstr ""
+msgstr "e.g. Project XYZ"

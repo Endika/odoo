@@ -8,6 +8,7 @@ import os
 import time
 import datetime
 import dateutil
+import pytz
 
 import openerp
 from openerp import SUPERUSER_ID
@@ -22,7 +23,7 @@ from openerp.tools import ormcache
 from openerp.tools.safe_eval import safe_eval as eval
 from openerp.tools.translate import _
 import openerp.workflow
-from openerp.exceptions import UserError
+from openerp.exceptions import MissingError, UserError
 
 _logger = logging.getLogger(__name__)
 
@@ -80,6 +81,9 @@ class actions(osv.osv):
             'time': time,
             'datetime': datetime,
             'dateutil': dateutil,
+            # NOTE: only `timezone` function. Do not provide the whole `pytz` module as users
+            #       will have access to `pytz.os` and `pytz.sys` to do nasty things...
+            'timezone': pytz.timezone,
         }
 
 class ir_actions_report_xml(osv.osv):
@@ -229,8 +233,8 @@ class ir_actions_report_xml(osv.osv):
         'report_xsl': fields.char('XSL Path'),
         'report_xml': fields.char('XML Path'),
 
-        'report_rml': fields.char('Main Report File Path/controller', help="The path to the main report file/controller (depending on Report Type) or NULL if the content is in another data field"),
-        'report_file': fields.related('report_rml', type="char", required=False, readonly=False, string='Report File', help="The path to the main report file (depending on Report Type) or NULL if the content is in another field", store=True),
+        'report_rml': fields.char('Main Report File Path/controller', help="The path to the main report file/controller (depending on Report Type) or empty if the content is in another data field"),
+        'report_file': fields.related('report_rml', type="char", required=False, readonly=False, string='Report File', help="The path to the main report file (depending on Report Type) or empty if the content is in another field", store=True),
 
         'report_sxw': fields.function(_report_sxw, type='char', string='SXW Path'),
         'report_sxw_content_data': fields.binary('SXW Content'),
@@ -401,7 +405,12 @@ class ir_actions_act_window(osv.osv):
     @openerp.api.multi
     def exists(self):
         ids = self._existing()
-        return self.filtered(lambda rec: rec.id in ids)
+        existing = self.filtered(lambda rec: rec.id in ids)
+        if len(existing) < len(self):
+            # mark missing records in cache with a failed value
+            exc = MissingError(_("Record does not exist or has been deleted."))
+            (self - existing)._cache.update(openerp.fields.FailedValue(exc))
+        return existing
 
     @openerp.api.model
     @ormcache()
@@ -1155,6 +1164,19 @@ Launch Manually Once: after having been launched manually, it sets automatically
         'type': 'manual',
     }
     _order="sequence,id"
+
+    @openerp.api.multi
+    def unlink(self):
+        if self:
+            try:
+                todo_open_menu = self.env.ref('base.open_menu')
+                # don't remove base.open_menu todo but set its original action
+                if todo_open_menu in self:
+                    todo_open_menu.action_id = self.env.ref('base.action_client_base_menu').id
+                    self -= todo_open_menu
+            except ValueError:
+                pass
+        return super(ir_actions_todo, self).unlink()
 
     def name_get(self, cr, uid, ids, context=None):
         return [(rec.id, rec.action_id.name) for rec in self.browse(cr, uid, ids, context=context)]

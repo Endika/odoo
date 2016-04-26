@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-14 10:27+0000\n"
-"PO-Revision-Date: 2015-09-07 17:49+0000\n"
+"POT-Creation-Date: 2015-09-18 08:11+0000\n"
+"PO-Revision-Date: 2015-11-25 12:48+0000\n"
 "Last-Translator: Martin Trigaux\n"
 "Language-Team: Georgian (http://www.transifex.com/odoo/odoo-9/language/ka/)\n"
 "MIME-Version: 1.0\n"
@@ -36,11 +36,16 @@ msgstr ""
 #: code:addons/crm_claim/crm_claim.py:142
 #, python-format
 msgid "%s (copy)"
-msgstr ""
+msgstr "%s (ასლი)"
 
 #. module: crm_claim
 #: model:ir.ui.view,arch_db:crm_claim.crm_case_claims_form_view
 msgid "Action Description..."
+msgstr ""
+
+#. module: crm_claim
+#: model:ir.model.fields,field_description:crm_claim.field_crm_claim_message_needaction
+msgid "Action Needed"
 msgstr ""
 
 #. module: crm_claim
@@ -67,7 +72,7 @@ msgstr ""
 #. module: crm_claim
 #: model:ir.ui.menu,name:crm_claim.menu_crm_case_claim-act
 msgid "Categories"
-msgstr ""
+msgstr "კატეგორიები"
 
 #. module: crm_claim
 #: model:ir.model.fields,field_description:crm_claim.field_crm_claim_categ_id
@@ -180,12 +185,12 @@ msgstr ""
 #. module: crm_claim
 #: model:ir.model.fields,field_description:crm_claim.field_crm_claim_report_date_closed
 msgid "Close Date"
-msgstr ""
+msgstr "დახურვის თარიღი"
 
 #. module: crm_claim
 #: model:ir.model.fields,field_description:crm_claim.field_crm_claim_date_closed
 msgid "Closed"
-msgstr ""
+msgstr "დახურვა"
 
 #. module: crm_claim
 #: model:ir.ui.view,arch_db:crm_claim.view_crm_case_claims_filter
@@ -202,7 +207,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:crm_claim.field_crm_claim_report_company_id
 #: model:ir.ui.view,arch_db:crm_claim.view_report_crm_claim_filter
 msgid "Company"
-msgstr ""
+msgstr "კომპანია"
 
 #. module: crm_claim
 #: model:utm.campaign,name:crm_claim.claim_source1
@@ -217,7 +222,7 @@ msgstr ""
 #. module: crm_claim
 #: model:ir.model.fields,field_description:crm_claim.field_crm_claim_report_create_date
 msgid "Create Date"
-msgstr ""
+msgstr "შექმნის თარიღი"
 
 #. module: crm_claim
 #: model:ir.actions.act_window,help:crm_claim.crm_claim_categ_action
@@ -232,18 +237,18 @@ msgstr ""
 #: model:ir.model.fields,field_description:crm_claim.field_crm_claim_create_uid
 #: model:ir.model.fields,field_description:crm_claim.field_crm_claim_stage_create_uid
 msgid "Created by"
-msgstr ""
+msgstr "შემქმნელი"
 
 #. module: crm_claim
 #: model:ir.model.fields,field_description:crm_claim.field_crm_claim_category_create_date
 #: model:ir.model.fields,field_description:crm_claim.field_crm_claim_stage_create_date
 msgid "Created on"
-msgstr ""
+msgstr "შექმნის თარიღი"
 
 #. module: crm_claim
 #: model:ir.model.fields,field_description:crm_claim.field_crm_claim_create_date
 msgid "Creation Date"
-msgstr ""
+msgstr "შექმნის თარიღი"
 
 #. module: crm_claim
 #: model:ir.ui.view,arch_db:crm_claim.view_report_crm_claim_filter
@@ -357,9 +362,13 @@ msgid "ID"
 msgstr "იდენტიფიკატორი"
 
 #. module: crm_claim
-#: model:ir.model.fields,help:crm_claim.field_crm_claim_message_needaction
 #: model:ir.model.fields,help:crm_claim.field_crm_claim_message_unread
 msgid "If checked new messages require your attention."
+msgstr ""
+
+#. module: crm_claim
+#: model:ir.model.fields,help:crm_claim.field_crm_claim_message_needaction
+msgid "If checked, new messages require your attention."
 msgstr ""
 
 #. module: crm_claim
@@ -415,12 +424,12 @@ msgstr ""
 #. module: crm_claim
 #: selection:crm.claim,priority:0 selection:crm.claim.report,priority:0
 msgid "Low"
-msgstr ""
+msgstr "დაბალი"
 
 #. module: crm_claim
 #: model:ir.model.fields,field_description:crm_claim.field_crm_claim_message_ids
 msgid "Messages"
-msgstr ""
+msgstr "მესიჯები"
 
 #. module: crm_claim
 #: model:ir.model.fields,help:crm_claim.field_crm_claim_message_ids
@@ -448,16 +457,6 @@ msgid "Name"
 msgstr "სახელი"
 
 #. module: crm_claim
-#: model:ir.model.fields,field_description:crm_claim.field_crm_claim_message_needaction
-msgid "Need Action"
-msgstr ""
-
-#. module: crm_claim
-#: model:ir.model.fields,field_description:crm_claim.field_crm_claim_message_needaction_counter
-msgid "Need Action Counter"
-msgstr ""
-
-#. module: crm_claim
 #: model:crm.claim.stage,name:crm_claim.stage_claim1
 msgid "New"
 msgstr "ახალი"
@@ -476,12 +475,17 @@ msgstr ""
 #: code:addons/crm_claim/crm_claim.py:158
 #, python-format
 msgid "No Subject"
-msgstr ""
+msgstr "თემის გარეშე"
 
 #. module: crm_claim
 #: selection:crm.claim,priority:0 selection:crm.claim.report,priority:0
 msgid "Normal"
 msgstr "ნორმალური"
+
+#. module: crm_claim
+#: model:ir.model.fields,field_description:crm_claim.field_crm_claim_message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
 
 #. module: crm_claim
 #: model:ir.model.fields,help:crm_claim.field_crm_claim_report_delay_close
@@ -490,7 +494,7 @@ msgstr ""
 
 #. module: crm_claim
 #: model:ir.model.fields,help:crm_claim.field_crm_claim_message_needaction_counter
-msgid "Number of needaction messages"
+msgid "Number of messages which requires an action"
 msgstr ""
 
 #. module: crm_claim
@@ -516,7 +520,7 @@ msgstr "პარტნიორი"
 #. module: crm_claim
 #: model:ir.model.fields,field_description:crm_claim.field_crm_claim_partner_phone
 msgid "Phone"
-msgstr ""
+msgstr "ტელეფონი"
 
 #. module: crm_claim
 #: model:crm.claim.category,name:crm_claim.categ_claim3
@@ -577,7 +581,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:crm_claim.field_crm_claim_user_id
 #: model:ir.ui.view,arch_db:crm_claim.view_crm_case_claims_filter
 msgid "Responsible"
-msgstr ""
+msgstr "პასუხისმგებელი"
 
 #. module: crm_claim
 #: model:ir.ui.view,arch_db:crm_claim.view_crm_case_claims_filter
@@ -635,21 +639,21 @@ msgstr ""
 
 #. module: crm_claim
 #: model:ir.model.fields,field_description:crm_claim.field_crm_claim_report_stage_id
-#: model:ir.model.fields,field_description:crm_claim.field_crm_claim_stage_id_8907
+#: model:ir.model.fields,field_description:crm_claim.field_crm_claim_stage_id_8819
 #: model:ir.ui.view,arch_db:crm_claim.view_crm_case_claims_filter
 #: model:ir.ui.view,arch_db:crm_claim.view_report_crm_claim_filter
 msgid "Stage"
-msgstr ""
+msgstr "ეტაპი"
 
 #. module: crm_claim
 #: model:ir.model.fields,field_description:crm_claim.field_crm_claim_stage_name
 msgid "Stage Name"
-msgstr ""
+msgstr "ეტაპის სახელი"
 
 #. module: crm_claim
 #: model:ir.ui.menu,name:crm_claim.menu_claim_stage_view
 msgid "Stages"
-msgstr ""
+msgstr "ეტაპები"
 
 #. module: crm_claim
 #: model:ir.model.fields,field_description:crm_claim.field_crm_claim_report_team_id
@@ -733,7 +737,7 @@ msgstr ""
 #. module: crm_claim
 #: model:ir.filters,name:crm_claim.filter_report_crm_claim_workload
 msgid "Workload"
-msgstr ""
+msgstr "სამუშაო დატვირთვა"
 
 #. module: crm_claim
 #: model:ir.actions.act_window,help:crm_claim.crm_claim_stage_act

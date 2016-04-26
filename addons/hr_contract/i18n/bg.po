@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-14 10:27+0000\n"
-"PO-Revision-Date: 2015-09-07 20:25+0000\n"
+"POT-Creation-Date: 2015-09-18 08:11+0000\n"
+"PO-Revision-Date: 2016-01-28 20:11+0000\n"
 "Last-Translator: Martin Trigaux\n"
 "Language-Team: Bulgarian (http://www.transifex.com/odoo/odoo-9/language/bg/)\n"
 "MIME-Version: 1.0\n"
@@ -16,6 +16,11 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Language: bg\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: hr_contract
+#: model:ir.model.fields,field_description:hr_contract.field_hr_contract_message_needaction
+msgid "Action Needed"
+msgstr "Нужно е действие"
 
 #. module: hr_contract
 #: model:ir.model,name:hr_contract.model_base_action_rule
@@ -136,7 +141,7 @@ msgstr "Отдел"
 #: model:ir.model.fields,field_description:hr_contract.field_hr_contract_display_name
 #: model:ir.model.fields,field_description:hr_contract.field_hr_contract_type_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Име за показване"
 
 #. module: hr_contract
 #: model:ir.ui.view,arch_db:hr_contract.hr_contract_view_form
@@ -213,14 +218,13 @@ msgid "ID"
 msgstr "ID"
 
 #. module: hr_contract
-#: model:ir.model.fields,help:hr_contract.field_hr_contract_message_needaction
 #: model:ir.model.fields,help:hr_contract.field_hr_contract_message_unread
 msgid "If checked new messages require your attention."
 msgstr ""
 
 #. module: hr_contract
-#: model:ir.ui.view,arch_db:hr_contract.hr_contract_view_search
-msgid "Important Messages"
+#: model:ir.model.fields,help:hr_contract.field_hr_contract_message_needaction
+msgid "If checked, new messages require your attention."
 msgstr ""
 
 #. module: hr_contract
@@ -236,7 +240,7 @@ msgstr "Информация"
 #. module: hr_contract
 #: model:ir.model.fields,field_description:hr_contract.field_hr_contract_message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "е последовател"
 
 #. module: hr_contract
 #: model:ir.model.fields,field_description:hr_contract.field_hr_employee_manager
@@ -262,7 +266,7 @@ msgstr "Дата на последното съобщение"
 #: model:ir.model.fields,field_description:hr_contract.field_hr_contract___last_update
 #: model:ir.model.fields,field_description:hr_contract.field_hr_contract_type___last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Последно променено на"
 
 #. module: hr_contract
 #: model:ir.model.fields,field_description:hr_contract.field_hr_contract_type_write_uid
@@ -302,16 +306,6 @@ msgid "Messages and communication history"
 msgstr ""
 
 #. module: hr_contract
-#: model:ir.model.fields,field_description:hr_contract.field_hr_contract_message_needaction
-msgid "Need Action"
-msgstr ""
-
-#. module: hr_contract
-#: model:ir.model.fields,field_description:hr_contract.field_hr_contract_message_needaction_counter
-msgid "Need Action Counter"
-msgstr ""
-
-#. module: hr_contract
 #: selection:hr.contract,state:0
 msgid "New"
 msgstr "Nieuw"
@@ -323,19 +317,24 @@ msgid "Notes"
 msgstr "Бележки"
 
 #. module: hr_contract
+#: model:ir.model.fields,field_description:hr_contract.field_hr_contract_message_needaction_counter
+msgid "Number of Actions"
+msgstr "Брой действия"
+
+#. module: hr_contract
 #: model:ir.model.fields,field_description:hr_contract.field_hr_employee_children
 msgid "Number of Children"
 msgstr "Брой деца"
 
 #. module: hr_contract
 #: model:ir.model.fields,help:hr_contract.field_hr_contract_message_needaction_counter
-msgid "Number of needaction messages"
+msgid "Number of messages which requires an action"
 msgstr ""
 
 #. module: hr_contract
 #: model:ir.model.fields,help:hr_contract.field_hr_contract_message_unread_counter
 msgid "Number of unread messages"
-msgstr ""
+msgstr "Брой непрочетени съобщения"
 
 #. module: hr_contract
 #: model:ir.filters,name:hr_contract.contract_open
@@ -412,6 +411,7 @@ msgstr "Начало на пробен период"
 
 #. module: hr_contract
 #: model:ir.model.fields,field_description:hr_contract.field_hr_contract_message_unread
+#: model:ir.ui.view,arch_db:hr_contract.hr_contract_view_search
 msgid "Unread Messages"
 msgstr "Непрочетени съобщения"
 

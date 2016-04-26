@@ -1,6 +1,7 @@
 odoo.define('web.ajax', function (require) {
 "use strict";
 
+var core = require('web.core');
 var time = require('web.time');
 var utils = require('web.utils');
 
@@ -14,7 +15,9 @@ function genericJsonRpc (fct_name, params, fct) {
     var xhr = fct(data);    
     var result = xhr.pipe(function(result) {
         if (result.error !== undefined) {
-            console.error("Server application error", JSON.stringify(result.error));
+            if (result.error.data.arguments[0] !== "bus.Bus not available in test mode") {
+                console.error("Server application error", JSON.stringify(result.error));
+            }
             return $.Deferred().reject("server", result.error);
         } else {
             return result.result;
@@ -200,7 +203,9 @@ function get_file(options) {
     // opening a new window seems the best way to workaround
     if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
         var params = _.extend({}, options.data || {}, {token: token});
-        var url = this.url(options.url, params);
+        var url = options.session.url(options.url, params);
+        if (options.complete) { options.complete(); }
+
         return window.open(url);
     }
 
@@ -237,6 +242,11 @@ function get_file(options) {
             action: options.url,
             method: 'POST'
         }).appendTo(document.body);
+    }
+    if (core.csrf_token) {
+        $('<input type="hidden" name="csrf_token">')
+                .val(core.csrf_token)
+                .appendTo($form_data);
     }
 
     var hparams = _.extend({}, options.data || {}, {token: token});
@@ -292,19 +302,16 @@ function post (controller_url, data) {
     };
 
     var Def = $.Deferred();
-    var compatibility = !(typeof(FormData));
-    var postData = compatibility ? new FormDataCompatibility() : new FormData();
+    var postData = new FormData();
     
     $.each(data, function(i,val) {
         postData.append(i, val);
     });
-
-    var xhr = new XMLHttpRequest();
-    if(compatibility) {
-        postData.setContentTypeHeader(xhr);
-        postData = postData.buildBody();
+    if (core.csrf_token) {
+        postData.append('csrf_token', core.csrf_token);
     }
 
+    var xhr = new XMLHttpRequest();
     if(xhr.upload) xhr.upload.addEventListener('progress', progressHandler(Def), false);
       
     var ajaxDef = $.ajax(controller_url, {

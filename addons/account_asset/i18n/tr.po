@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-14 10:27+0000\n"
-"PO-Revision-Date: 2015-09-14 09:04+0000\n"
+"POT-Creation-Date: 2016-01-15 09:26+0000\n"
+"PO-Revision-Date: 2016-04-21 08:23+0000\n"
 "Last-Translator: Martin Trigaux\n"
 "Language-Team: Turkish (http://www.transifex.com/odoo/odoo-9/language/tr/)\n"
 "MIME-Version: 1.0\n"
@@ -47,6 +47,11 @@ msgstr ""
 #: model:ir.model,name:account_asset.model_account_move
 msgid "Account Entry"
 msgstr "Hesap Girişi"
+
+#. module: account_asset
+#: model:ir.model.fields,field_description:account_asset.field_account_asset_asset_message_needaction
+msgid "Action Needed"
+msgstr "Eylem Gerekiyor"
 
 #. module: account_asset
 #: model:ir.model.fields,field_description:account_asset.field_account_asset_asset_active
@@ -127,6 +132,7 @@ msgstr ""
 #. module: account_asset
 #: model:ir.model.fields,field_description:account_asset.field_account_asset_category_name
 #: model:ir.model.fields,field_description:account_asset.field_product_template_asset_category_id
+#: model:ir.ui.view,arch_db:account_asset.view_account_asset_category_form
 msgid "Asset Type"
 msgstr ""
 
@@ -388,13 +394,14 @@ msgstr ""
 
 #. module: account_asset
 #: model:ir.model.fields,field_description:account_asset.field_product_template_deferred_revenue_category_id
+#: model:ir.ui.view,arch_db:account_asset.view_account_asset_category_form
 msgid "Deferred Revenue Type"
 msgstr ""
 
 #. module: account_asset
 #: model:ir.ui.view,arch_db:account_asset.view_account_asset_category_search
 msgid "Deferred Revenues"
-msgstr ""
+msgstr "Ertelenmiş Gelirler"
 
 #. module: account_asset
 #: selection:account.asset.asset,method:0
@@ -411,7 +418,7 @@ msgstr "Azalma Faktörü"
 #. module: account_asset
 #: model:ir.ui.view,arch_db:account_asset.view_account_asset_asset_form
 msgid "Depreciation"
-msgstr ""
+msgstr "Amortisman"
 
 #. module: account_asset
 #: model:ir.model.fields,field_description:account_asset.field_account_asset_category_account_depreciation_id
@@ -481,7 +488,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:account_asset.field_asset_depreciation_confirmation_wizard_display_name
 #: model:ir.model.fields,field_description:account_asset.field_asset_modify_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Adı Göster"
 
 #. module: account_asset
 #: code:addons/account_asset/account_asset.py:274
@@ -543,12 +550,12 @@ msgstr "İzleyiciler"
 #. module: account_asset
 #: model:ir.model.fields,field_description:account_asset.field_account_asset_asset_message_channel_ids
 msgid "Followers (Channels)"
-msgstr ""
+msgstr "İzleyiciler (Kanallar)"
 
 #. module: account_asset
 #: model:ir.model.fields,field_description:account_asset.field_account_asset_asset_message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "İzleyiciler (İş ortakları)"
 
 #. module: account_asset
 #: model:ir.actions.act_window,help:account_asset.action_asset_asset_report
@@ -604,10 +611,14 @@ msgid "ID"
 msgstr "ID"
 
 #. module: account_asset
-#: model:ir.model.fields,help:account_asset.field_account_asset_asset_message_needaction
 #: model:ir.model.fields,help:account_asset.field_account_asset_asset_message_unread
 msgid "If checked new messages require your attention."
 msgstr "Eğer işaretliyse yeni iletiler ilginizi gerektirir."
+
+#. module: account_asset
+#: model:ir.model.fields,help:account_asset.field_account_asset_asset_message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "İşaretliyse, yeni mesajlar dikkatinizi gerektirir."
 
 #. module: account_asset
 #: model:ir.ui.view,arch_db:account_asset.view_account_asset_category_form
@@ -644,7 +655,7 @@ msgstr "Fatura Satırı"
 #. module: account_asset
 #: model:ir.model.fields,field_description:account_asset.field_account_asset_asset_message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "Takipçi mi"
 
 #. module: account_asset
 #: model:ir.model.fields,help:account_asset.field_account_asset_asset_salvage_value
@@ -713,11 +724,6 @@ msgid "Messages"
 msgstr "Mesajlar"
 
 #. module: account_asset
-#: model:ir.model.fields,help:account_asset.field_account_asset_asset_message_ids
-msgid "Messages and communication history"
-msgstr "Mesajlar ve iletişim geçmişi"
-
-#. module: account_asset
 #: model:ir.ui.view,arch_db:account_asset.asset_modify_form
 msgid "Modify"
 msgstr "Değiştir"
@@ -745,16 +751,6 @@ msgid "Monthly Recurring Revenue"
 msgstr ""
 
 #. module: account_asset
-#: model:ir.model.fields,field_description:account_asset.field_account_asset_asset_message_needaction
-msgid "Need Action"
-msgstr ""
-
-#. module: account_asset
-#: model:ir.model.fields,field_description:account_asset.field_account_asset_asset_message_needaction_counter
-msgid "Need Action Counter"
-msgstr ""
-
-#. module: account_asset
 #: model:ir.model.fields,field_description:account_asset.field_account_asset_depreciation_line_remaining_value
 msgid "Next Period Depreciation"
 msgstr "Sonra Dönemdeki Amortisman"
@@ -763,6 +759,11 @@ msgstr "Sonra Dönemdeki Amortisman"
 #: model:ir.model.fields,field_description:account_asset.field_account_asset_asset_note
 msgid "Note"
 msgstr "Not"
+
+#. module: account_asset
+#: model:ir.model.fields,field_description:account_asset.field_account_asset_asset_message_needaction_counter
+msgid "Number of Actions"
+msgstr "İşlem Sayısı"
 
 #. module: account_asset
 #: selection:account.asset.asset,method_time:0
@@ -785,13 +786,13 @@ msgstr "Bir dönemdeki ay sayısı"
 
 #. module: account_asset
 #: model:ir.model.fields,help:account_asset.field_account_asset_asset_message_needaction_counter
-msgid "Number of needaction messages"
-msgstr ""
+msgid "Number of messages which requires an action"
+msgstr "Eylem gerektiren mesaj sayısı"
 
 #. module: account_asset
 #: model:ir.model.fields,help:account_asset.field_account_asset_asset_message_unread_counter
 msgid "Number of unread messages"
-msgstr ""
+msgstr "Okunmamış mesaj sayısı"
 
 #. module: account_asset
 #: code:addons/account_asset/account_asset.py:488
@@ -824,9 +825,12 @@ msgid "Post Journal Entries"
 msgstr "Günlük Girişleri İşle"
 
 #. module: account_asset
+#. openerp-web
+#: code:addons/account_asset/static/src/js/account_asset.js:24
 #: model:ir.model.fields,field_description:account_asset.field_account_asset_depreciation_line_move_check
 #: model:ir.model.fields,field_description:account_asset.field_asset_asset_report_move_check
 #: model:ir.ui.view,arch_db:account_asset.view_asset_asset_report_search
+#, python-format
 msgid "Posted"
 msgstr "İşlendi"
 
@@ -993,6 +997,13 @@ msgid "Type"
 msgstr "Tür"
 
 #. module: account_asset
+#. openerp-web
+#: code:addons/account_asset/static/src/js/account_asset.js:24
+#, python-format
+msgid "Unposted"
+msgstr ""
+
+#. module: account_asset
 #: model:ir.model.fields,field_description:account_asset.field_asset_asset_report_unposted_value
 msgid "Unposted Amount"
 msgstr "İşlenmemiş Tutar"
@@ -1005,23 +1016,13 @@ msgstr "Okunmamış Mesajlar"
 #. module: account_asset
 #: model:ir.model.fields,field_description:account_asset.field_account_asset_asset_message_unread_counter
 msgid "Unread Messages Counter"
-msgstr ""
+msgstr "Okunmamış Mesaj Sayacı"
 
 #. module: account_asset
 #: model:ir.ui.view,arch_db:account_asset.view_account_asset_asset_form
 #: model:ir.ui.view,arch_db:account_asset.view_account_asset_asset_purchase_tree
 msgid "Vendor"
-msgstr ""
-
-#. module: account_asset
-#: model:ir.model.fields,field_description:account_asset.field_account_asset_asset_website_message_ids
-msgid "Website Messages"
-msgstr "Websitesi Mesajları"
-
-#. module: account_asset
-#: model:ir.model.fields,help:account_asset.field_account_asset_asset_website_message_ids
-msgid "Website communication history"
-msgstr "Web Sitesi iletişim geçmişi"
+msgstr "Tedarikçi"
 
 #. module: account_asset
 #: model:ir.model.fields,help:account_asset.field_account_asset_asset_state
@@ -1036,6 +1037,14 @@ msgstr "Yeni bir demirbaş oluşturulduğunda durumu 'Taslak' olarak ayarlanır.
 #: model:ir.model.fields,field_description:account_asset.field_asset_asset_report_name
 msgid "Year"
 msgstr "Yıl"
+
+#. module: account_asset
+#: code:addons/account_asset/account_asset_invoice.py:53
+#, python-format
+msgid ""
+"You already have assets with the reference %s.\n"
+"Please delete these assets before creating new ones for this invoice."
+msgstr ""
 
 #. module: account_asset
 #: code:addons/account_asset/account_asset.py:100

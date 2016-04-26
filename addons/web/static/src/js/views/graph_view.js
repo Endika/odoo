@@ -29,7 +29,7 @@ var GraphView = View.extend({
         this.widget = undefined;
     },
     start: function () {
-        var load_fields = this.model.call('fields_get', [])
+        var load_fields = this.model.call('fields_get', [], {context: this.dataset.get_context()})
                 .then(this.prepare_fields.bind(this));
 
         return $.when(this._super(), load_fields);
@@ -99,6 +99,7 @@ var GraphView = View.extend({
                 groupbys: this.initial_groupbys,
                 context: context,
                 fields: this.fields,
+                stacked: this.fields_view.arch.attrs.stacked !== "False" 
             });
             // append widget
             this.widget.appendTo(this.$el);

@@ -15,7 +15,7 @@ import subprocess
 import sys
 import threading
 import time
-import unittest2
+import unittest
 
 import werkzeug.serving
 from werkzeug.debug import DebuggedApplication
@@ -55,7 +55,8 @@ SLEEP_INTERVAL = 60     # 1 min
 def memory_info(process):
     """ psutil < 2.0 does not have memory_info, >= 3.0 does not have
     get_memory_info """
-    return (getattr(process, 'memory_info', None) or process.get_memory_info)()
+    pmem = (getattr(process, 'memory_info', None) or process.get_memory_info)()
+    return (pmem.rss, pmem.vms)
 
 #----------------------------------------------------------
 # Werkzeug WSGI servers patched
@@ -860,12 +861,12 @@ def load_test_file_py(registry, test_file):
         if mod_mod:
             mod_path, _ = os.path.splitext(getattr(mod_mod, '__file__', ''))
             if test_path == mod_path:
-                suite = unittest2.TestSuite()
-                for t in unittest2.TestLoader().loadTestsFromModule(mod_mod):
+                suite = unittest.TestSuite()
+                for t in unittest.TestLoader().loadTestsFromModule(mod_mod):
                     suite.addTest(t)
                 _logger.log(logging.INFO, 'running tests %s.', mod_mod.__name__)
                 stream = openerp.modules.module.TestStream()
-                result = unittest2.TextTestRunner(verbosity=2, stream=stream).run(suite)
+                result = unittest.TextTestRunner(verbosity=2, stream=stream).run(suite)
                 success = result.wasSuccessful()
                 if hasattr(registry._assertion_report,'report_result'):
                     registry._assertion_report.report_result(success)

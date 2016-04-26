@@ -425,7 +425,7 @@ class procurement_order(osv.osv):
         days = orderpoint.lead_days or 0.0
         if orderpoint.lead_type=='purchase':
             # These days will be substracted when creating the PO
-            days += orderpoint.product_id.seller_delay or 0.0
+            days += orderpoint.product_id._select_seller(orderpoint.product_id).delay or 0.0
         date_planned = start_date + relativedelta(days=days)
         return date_planned.strftime(DEFAULT_SERVER_DATE_FORMAT)
 
@@ -506,7 +506,7 @@ class procurement_order(osv.osv):
                             if qty_rounded > 0:
                                 proc_id = procurement_obj.create(cr, uid,
                                                                  self._prepare_orderpoint_procurement(cr, uid, op, qty_rounded, context=context),
-                                                                 context=context)
+                                                                 context=dict(context, procurement_autorun_defer=True))
                                 tot_procs.append(proc_id)
                             if use_new_cursor:
                                 cr.commit()

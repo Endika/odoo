@@ -3,13 +3,14 @@
 # * project_issue
 # 
 # Translators:
+# Arma Gedonsky <armagedonsky@hot.ee>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-07 14:40+0000\n"
-"PO-Revision-Date: 2015-09-08 07:31+0000\n"
-"Last-Translator: Martin Trigaux\n"
+"POT-Creation-Date: 2015-09-29 10:25+0000\n"
+"PO-Revision-Date: 2016-03-12 19:57+0000\n"
+"Last-Translator: Arma Gedonsky <armagedonsky@hot.ee>\n"
 "Language-Team: Estonian (http://www.transifex.com/odoo/odoo-9/language/et/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -33,7 +34,7 @@ msgid "# of Issues"
 msgstr ""
 
 #. module: project_issue
-#: code:addons/project_issue/project_issue.py:209
+#: code:addons/project_issue/project_issue.py:212
 #, python-format
 msgid "%s (copy)"
 msgstr "%s (koopia)"
@@ -63,6 +64,11 @@ msgid ""
 msgstr ""
 
 #. module: project_issue
+#: model:ir.model.fields,field_description:project_issue.field_project_issue_message_needaction
+msgid "Action Needed"
+msgstr "Vajalik toiming"
+
+#. module: project_issue
 #: model:ir.model.fields,field_description:project_issue.field_project_issue_active
 msgid "Active"
 msgstr "Aktiivne"
@@ -80,7 +86,7 @@ msgstr "Analüütiline konto"
 #. module: project_issue
 #: model:ir.ui.view,arch_db:project_issue.view_project_issue_filter
 msgid "Archived"
-msgstr ""
+msgstr "Arhiveeritud"
 
 #. module: project_issue
 #: model:ir.model.fields,field_description:project_issue.field_project_issue_date_open
@@ -121,11 +127,6 @@ msgid "Blocked"
 msgstr ""
 
 #. module: project_issue
-#: model:ir.model.fields,field_description:project_issue.field_project_project_crossovered_budget_line
-msgid "Budget Lines"
-msgstr "Eelarveread"
-
-#. module: project_issue
 #: model:ir.filters,name:project_issue.filter_issue_report_responsible
 msgid "By Responsible"
 msgstr ""
@@ -140,11 +141,6 @@ msgstr "Allikas"
 #: model:ir.model.fields,help:project_issue.field_account_analytic_account_use_issues
 #: model:ir.model.fields,help:project_issue.field_project_project_use_issues
 msgid "Check this box to manage customer activities through this project"
-msgstr ""
-
-#. module: project_issue
-#: model:ir.model.fields,help:project_issue.field_project_project_use_timesheets
-msgid "Check this field if this project manages timesheets"
 msgstr ""
 
 #. module: project_issue
@@ -210,13 +206,13 @@ msgid "Creation Date"
 msgstr "Loomise kuupäev"
 
 #. module: project_issue
-#: code:addons/project_issue/project_issue.py:364
+#: code:addons/project_issue/project_issue.py:367
 #, python-format
 msgid "Customer"
 msgstr "Klient"
 
 #. module: project_issue
-#: code:addons/project_issue/project_issue.py:366
+#: code:addons/project_issue/project_issue.py:369
 #, python-format
 msgid "Customer Email"
 msgstr "Kliendi e-mail"
@@ -300,7 +296,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:project_issue.field_project_issue_display_name
 #: model:ir.model.fields,field_description:project_issue.field_project_issue_report_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Näidatav nimi"
 
 #. module: project_issue
 #: model:ir.model.fields,field_description:project_issue.field_project_issue_duration
@@ -360,10 +356,10 @@ msgid "High"
 msgstr "Kõrge"
 
 #. module: project_issue
-#: code:addons/project_issue/project_issue.py:342
+#: code:addons/project_issue/project_issue.py:345
 #, python-format
 msgid "I take it"
-msgstr ""
+msgstr "Võta see"
 
 #. module: project_issue
 #: model:ir.model.fields,field_description:project_issue.field_project_issue_id
@@ -372,21 +368,19 @@ msgid "ID"
 msgstr "ID"
 
 #. module: project_issue
-#: model:ir.model.fields,help:project_issue.field_project_issue_message_needaction
 #: model:ir.model.fields,help:project_issue.field_project_issue_message_unread
 msgid "If checked new messages require your attention."
-msgstr ""
+msgstr "Kui kontrollitud, siis uued sõnumid nõuavad Su tähelepanu."
 
 #. module: project_issue
-#: model:ir.ui.view,arch_db:project_issue.project_issue_kanban_view
-#: model:ir.ui.view,arch_db:project_issue.view_project_issue_filter
-msgid "Important Messages"
-msgstr ""
+#: model:ir.model.fields,help:project_issue.field_project_issue_message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Kui kontrollitud, siis uued sõnumid nõuavad Su tähelepanu"
 
 #. module: project_issue
 #: model:ir.model.fields,field_description:project_issue.field_project_issue_message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "Jälgija"
 
 #. module: project_issue
 #: model:ir.model.fields,field_description:project_issue.field_project_issue_name
@@ -399,7 +393,7 @@ msgstr ""
 #: model:mail.message.subtype,name:project_issue.mt_issue_blocked
 #: model:mail.message.subtype,name:project_issue.mt_project_issue_blocked
 msgid "Issue Blocked"
-msgstr ""
+msgstr "Küsimus blokeeritud"
 
 #. module: project_issue
 #: model:mail.message.subtype,name:project_issue.mt_issue_new
@@ -474,8 +468,23 @@ msgid "Issues Analysis"
 msgstr ""
 
 #. module: project_issue
+#: model:ir.model.fields,field_description:project_issue.field_project_issue_legend_blocked
+msgid "Kanban Blocked Explanation"
+msgstr ""
+
+#. module: project_issue
+#: model:ir.model.fields,field_description:project_issue.field_project_issue_legend_normal
+msgid "Kanban Ongoing Explanation"
+msgstr ""
+
+#. module: project_issue
 #: model:ir.model.fields,field_description:project_issue.field_project_issue_kanban_state
 msgid "Kanban State"
+msgstr ""
+
+#. module: project_issue
+#: model:ir.model.fields,field_description:project_issue.field_project_issue_legend_done
+msgid "Kanban Valid Explanation"
 msgstr ""
 
 #. module: project_issue
@@ -486,18 +495,18 @@ msgstr "Viimane toiming"
 #. module: project_issue
 #: model:ir.ui.view,arch_db:project_issue.view_project_issue_filter
 msgid "Last Message"
-msgstr ""
+msgstr "Viimane sõnum"
 
 #. module: project_issue
 #: model:ir.model.fields,field_description:project_issue.field_project_issue_message_last_post
 msgid "Last Message Date"
-msgstr ""
+msgstr "Viimase sõnumi kuupäev"
 
 #. module: project_issue
 #: model:ir.model.fields,field_description:project_issue.field_project_issue___last_update
 #: model:ir.model.fields,field_description:project_issue.field_project_issue_report___last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Viimati muudetud"
 
 #. module: project_issue
 #: model:ir.model.fields,field_description:project_issue.field_project_issue_date_last_stage_update
@@ -508,7 +517,7 @@ msgstr ""
 #. module: project_issue
 #: model:ir.model.fields,field_description:project_issue.field_project_issue_write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Viimati uuendatud"
 
 #. module: project_issue
 #: selection:project.issue,priority:0
@@ -524,21 +533,11 @@ msgstr "Sõnumid"
 #. module: project_issue
 #: model:ir.model.fields,help:project_issue.field_project_issue_message_ids
 msgid "Messages and communication history"
-msgstr ""
+msgstr "Sõnumite ja kommunikatsiooni ajalugu"
 
 #. module: project_issue
 #: model:ir.ui.view,arch_db:project_issue.view_project_issue_filter
 msgid "My Issues"
-msgstr ""
-
-#. module: project_issue
-#: model:ir.model.fields,field_description:project_issue.field_project_issue_message_needaction
-msgid "Need Action"
-msgstr ""
-
-#. module: project_issue
-#: model:ir.model.fields,field_description:project_issue.field_project_issue_message_needaction_counter
-msgid "Need Action Counter"
 msgstr ""
 
 #. module: project_issue
@@ -548,7 +547,7 @@ msgid "New"
 msgstr "Uus"
 
 #. module: project_issue
-#: code:addons/project_issue/project_issue.py:344
+#: code:addons/project_issue/project_issue.py:347
 #, python-format
 msgid "New Issue"
 msgstr ""
@@ -559,7 +558,7 @@ msgid "Next Action"
 msgstr "Järgmine Toiming"
 
 #. module: project_issue
-#: code:addons/project_issue/project_issue.py:387
+#: code:addons/project_issue/project_issue.py:390
 #, python-format
 msgid "No Subject"
 msgstr "Subjekt puudub"
@@ -569,6 +568,11 @@ msgstr "Subjekt puudub"
 #: selection:project.issue.report,priority:0
 msgid "Normal"
 msgstr "Tavaline"
+
+#. module: project_issue
+#: model:ir.model.fields,field_description:project_issue.field_project_issue_message_needaction_counter
+msgid "Number of Actions"
+msgstr "Toimingute arv"
 
 #. module: project_issue
 #: model:ir.model.fields,help:project_issue.field_project_issue_report_delay_close
@@ -582,13 +586,13 @@ msgstr ""
 
 #. module: project_issue
 #: model:ir.model.fields,help:project_issue.field_project_issue_message_needaction_counter
-msgid "Number of needaction messages"
-msgstr ""
+msgid "Number of messages which requires an action"
+msgstr "Tegutsemist nõudvate sõnumite arv"
 
 #. module: project_issue
 #: model:ir.model.fields,help:project_issue.field_project_issue_message_unread_counter
 msgid "Number of unread messages"
-msgstr ""
+msgstr "Lugemata sõnumite arv"
 
 #. module: project_issue
 #: model:ir.model,name:project_issue.model_res_partner
@@ -596,7 +600,7 @@ msgid "Partner"
 msgstr "Partner"
 
 #. module: project_issue
-#: code:addons/project_issue/project_issue.py:477
+#: code:addons/project_issue/project_issue.py:480
 #, python-format
 msgid ""
 "Please remove existing issues in the project linked to the accounts you want"
@@ -653,7 +657,7 @@ msgstr ""
 #. module: project_issue
 #: model:ir.model.fields,field_description:project_issue.field_project_issue_team_id
 msgid "Sales Team"
-msgstr ""
+msgstr "Müügi meeskond"
 
 #. module: project_issue
 #: model:ir.model.fields,help:project_issue.field_project_issue_team_id
@@ -739,11 +743,6 @@ msgid ""
 msgstr ""
 
 #. module: project_issue
-#: model:ir.model.fields,field_description:project_issue.field_project_project_use_timesheets
-msgid "Timesheets"
-msgstr "Tööajalehed"
-
-#. module: project_issue
 #: model:ir.ui.view,arch_db:project_issue.view_project_issue_filter
 #: model:ir.ui.view,arch_db:project_issue.view_project_issue_report_filter
 msgid "Unassigned"
@@ -751,13 +750,15 @@ msgstr ""
 
 #. module: project_issue
 #: model:ir.model.fields,field_description:project_issue.field_project_issue_message_unread
+#: model:ir.ui.view,arch_db:project_issue.project_issue_kanban_view
+#: model:ir.ui.view,arch_db:project_issue.view_project_issue_filter
 msgid "Unread Messages"
 msgstr "Lugemata sõnumid"
 
 #. module: project_issue
 #: model:ir.model.fields,field_description:project_issue.field_project_issue_message_unread_counter
 msgid "Unread Messages Counter"
-msgstr ""
+msgstr "Lugemata sõnumite loendur"
 
 #. module: project_issue
 #: model:ir.model.fields,field_description:project_issue.field_project_issue_write_date
@@ -787,12 +788,12 @@ msgstr ""
 #. module: project_issue
 #: model:ir.model.fields,field_description:project_issue.field_project_issue_website_message_ids
 msgid "Website Messages"
-msgstr ""
+msgstr "Veebilehe sõnumid"
 
 #. module: project_issue
 #: model:ir.model.fields,help:project_issue.field_project_issue_website_message_ids
 msgid "Website communication history"
-msgstr ""
+msgstr "Veebilehe suhtluse ajalugu"
 
 #. module: project_issue
 #: model:ir.model.fields,field_description:project_issue.field_project_issue_working_hours_open
@@ -819,10 +820,10 @@ msgid ""
 msgstr ""
 
 #. module: project_issue
-#: code:addons/project_issue/project_issue.py:257
+#: code:addons/project_issue/project_issue.py:260
 #, python-format
 msgid "issues"
-msgstr ""
+msgstr "Väljalasked"
 
 #. module: project_issue
 #: model:ir.model,name:project_issue.model_project_issue_report

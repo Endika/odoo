@@ -11,7 +11,7 @@
                     <field name="user_id" required="1" options='{"no_open": True}'
                         context="{'default_groups_ref': ['base.group_user']}"/>
                     <field name="name"/>
-                    <field name="account_id" context="{'default_use_timesheets': 1, 'default_type': 'contract'}" options="{'no_open': True, 'no_create': True}"/>
+                    <field name="account_id" context="{'default_type': 'contract'}" options="{'no_open': True, 'no_create': True}"/>
                     <field name="unit_amount" string="Duration" sum="Total time" widget="float_time"/>
                     <field name="is_timesheet" invisible="1"/>
                 </tree>
@@ -80,6 +80,8 @@
             <field name="res_model">account.analytic.account</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field> <!-- reset to empty -->
+            <field name="context">{}</field> <!-- reset to empty -->
         </record>
 
         <menuitem name="Configuration" id="menu_hr_timesheet_config" sequence="100"
@@ -90,6 +92,7 @@
             <field name="res_model">account.analytic.line</field>
             <field name="view_type">form</field>
             <field name="view_id" ref="hr_timesheet_line_form"/>
+            <field name="domain">[('is_timesheet', '=', True)]</field>
             <field name="context">{"search_default_today":1, "default_is_timesheet":1}</field>
             <field name="search_view_id" ref="hr_timesheet_line_search"/>
             <field name="help" type="html">

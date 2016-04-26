@@ -3,13 +3,16 @@
 # * fleet
 # 
 # Translators:
+# krnkris, 2015
+# krnkris, 2016
+# Oregional <geza.nagy@oregional.hu>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-14 10:28+0000\n"
-"PO-Revision-Date: 2015-09-14 10:42+0000\n"
-"Last-Translator: Martin Trigaux\n"
+"POT-Creation-Date: 2015-09-29 10:27+0000\n"
+"PO-Revision-Date: 2016-04-12 10:04+0000\n"
+"Last-Translator: krnkris\n"
 "Language-Team: Hungarian (http://www.transifex.com/odoo/odoo-9/language/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,13 +21,13 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: fleet
-#: code:addons/fleet/fleet.py:374
+#: code:addons/fleet/fleet.py:373
 #, python-format
 msgid "%s %s has been added to the fleet!"
 msgstr "%s %s flottához hozzáadva!"
 
 #. module: fleet
-#: code:addons/fleet/fleet.py:650
+#: code:addons/fleet/fleet.py:649
 #, python-format
 msgid "%s contract(s) need(s) to be renewed and/or closed!"
 msgstr "%s szerződés(eket) szükséges megújítani és/vagy lezárni!"
@@ -32,12 +35,12 @@ msgstr "%s szerződés(eket) szükséges megújítani és/vagy lezárni!"
 #. module: fleet
 #: model:ir.ui.view,arch_db:fleet.fleet_vehicle_form
 msgid "<span>g/km</span>"
-msgstr ""
+msgstr "<span>g/km</span>"
 
 #. module: fleet
 #: model:ir.ui.view,arch_db:fleet.fleet_vehicle_form
 msgid "<span>kW</span>"
-msgstr ""
+msgstr "<span>kW</span>"
 
 #. module: fleet
 #: model:fleet.service.type,name:fleet.type_service_1
@@ -70,6 +73,11 @@ msgid "Acquisition Date"
 msgstr "Beszerzés dátuma"
 
 #. module: fleet
+#: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_message_needaction
+msgid "Action Needed"
+msgstr "Művelet szükséges"
+
+#. module: fleet
 #: model:ir.ui.view,arch_db:fleet.fleet_vehicle_log_contract_form
 #: model:ir.ui.view,arch_db:fleet.fleet_vehicle_log_contract_tree
 msgid "Activation Cost"
@@ -84,7 +92,7 @@ msgstr "További részletek"
 #. module: fleet
 #: model:ir.ui.view,arch_db:fleet.fleet_vehicle_form
 msgid "Additional Properties"
-msgstr "Lehetőségek"
+msgstr "Egyéb jellemzők"
 
 #. module: fleet
 #: model:fleet.service.type,name:fleet.type_service_6
@@ -232,52 +240,52 @@ msgstr "Válasszon, hogy a szolgáltatás hivatkozik szerződésekre, gépjárm�
 #. module: fleet
 #: model:ir.actions.act_window,help:fleet.fleet_vehicle_log_contract_act
 msgid "Click to create a new contract."
-msgstr ""
+msgstr "Kattintson egy új szerződés létrehozásához."
 
 #. module: fleet
 #: model:ir.actions.act_window,help:fleet.fleet_vehicle_costs_act
 msgid "Click to create a new cost."
-msgstr ""
+msgstr "Kattintson egy új költség létrehozásához."
 
 #. module: fleet
 #: model:ir.actions.act_window,help:fleet.fleet_vehicle_log_fuel_act
 msgid "Click to create a new fuel log."
-msgstr ""
+msgstr "Kattintson egy új üzemanyag fogyasztási  napló létrehozásához."
 
 #. module: fleet
 #: model:ir.actions.act_window,help:fleet.fleet_vehicle_model_brand_act
 msgid "Click to create a new make."
-msgstr ""
+msgstr "Kattintson egy új gyártó létrehozásához."
 
 #. module: fleet
 #: model:ir.actions.act_window,help:fleet.fleet_vehicle_model_act
 msgid "Click to create a new model."
-msgstr ""
+msgstr "Kattintson egy új modell létrehozásához."
 
 #. module: fleet
 #: model:ir.actions.act_window,help:fleet.fleet_vehicle_odometer_act
 msgid "Click to create a new odometer log."
-msgstr ""
+msgstr "Kattintson egy új távolság napló létrehozásához."
 
 #. module: fleet
 #: model:ir.actions.act_window,help:fleet.fleet_vehicle_log_services_act
 msgid "Click to create a new service entry."
-msgstr ""
+msgstr "Kattintson egy új szerviz bevitel létrehozásához."
 
 #. module: fleet
 #: model:ir.actions.act_window,help:fleet.fleet_vehicle_service_types_act
 msgid "Click to create a new type of service."
-msgstr ""
+msgstr "Kattintson egy új szerviz típus létrehozásához."
 
 #. module: fleet
 #: model:ir.actions.act_window,help:fleet.fleet_vehicle_act
 msgid "Click to create a new vehicle."
-msgstr ""
+msgstr "Kattintson egy új jármű létrehozásához."
 
 #. module: fleet
 #: model:ir.actions.act_window,help:fleet.fleet_vehicle_state_act
 msgid "Click to create a vehicle status."
-msgstr ""
+msgstr "Kattintson egy új jármű állapot létrehozásához."
 
 #. module: fleet
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_color
@@ -405,7 +413,7 @@ msgstr "Költség típusa"
 #. module: fleet
 #: model:ir.model,name:fleet.model_fleet_vehicle_cost
 msgid "Cost related to a vehicle"
-msgstr "Eyg gépjárműhöz kapcsolódó költség"
+msgstr "Gépjárműhöz kapcsolódó költség"
 
 #. module: fleet
 #: model:ir.ui.view,arch_db:fleet.fleet_vehicle_log_contract_form
@@ -430,7 +438,7 @@ msgstr "Költségek"
 #. module: fleet
 #: model:ir.actions.act_window,name:fleet.action_fleet_reporting_costs
 msgid "Costs Analysis"
-msgstr "Költség analízis/elemzés"
+msgstr "Költség analízis"
 
 #. module: fleet
 #: model:ir.ui.view,arch_db:fleet.fleet_vehicle_costs_graph
@@ -484,7 +492,7 @@ msgid "Created on"
 msgstr "Létrehozás dátuma"
 
 #. module: fleet
-#: model:ir.model.fields,help:fleet.field_fleet_vehicle_state_id_2864
+#: model:ir.model.fields,help:fleet.field_fleet_vehicle_state_id_2863
 msgid "Current state of the vehicle"
 msgstr "Ennek a gépjárműnek a jelenlegi állapota"
 
@@ -535,7 +543,7 @@ msgstr "A gépjármű vásárlásának dátuma"
 #. module: fleet
 #: model:fleet.service.type,name:fleet.type_service_service_2
 msgid "Depreciation and Interests"
-msgstr "Értékcsökkenés és Értéknövekedés"
+msgstr "Értékcsökkenés és kamatok"
 
 #. module: fleet
 #: selection:fleet.vehicle,fuel_type:0
@@ -556,7 +564,7 @@ msgstr "Dízel"
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_state_display_name
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_tag_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Név megjelenítése"
 
 #. module: fleet
 #: model:fleet.service.type,name:fleet.type_service_17
@@ -579,7 +587,7 @@ msgid "Driver of the vehicle"
 msgstr "A gépjármú vezetője"
 
 #. module: fleet
-#: code:addons/fleet/fleet.py:391
+#: code:addons/fleet/fleet.py:390
 #, python-format
 msgid "Driver: from '%s' to '%s'"
 msgstr "Autóvezető: ettől '%s' eddig '%s'"
@@ -589,12 +597,12 @@ msgstr "Autóvezető: ettől '%s' eddig '%s'"
 msgid ""
 "Each contract (e.g.: leasing) may include several services\n"
 "                (reparation, insurances, periodic maintenance)."
-msgstr ""
+msgstr "Mindegyik szerződés (pl.: lízing) magában foglal egy pár szolgáltatást (javítások, biztosítások, periodikus felülvizsgálatok)."
 
 #. module: fleet
 #: model:ir.actions.act_window,help:fleet.fleet_vehicle_service_types_act
 msgid "Each service can used in contracts, as a standalone service or both."
-msgstr ""
+msgstr "Mindegyik szolgáltatás felhasználható a szerződésekben, egyesével vagy az mindkettőben."
 
 #. module: fleet
 #: model:ir.ui.view,arch_db:fleet.fleet_vehicle_costs_search
@@ -612,10 +620,10 @@ msgid "Emissions"
 msgstr "Kibocsátás"
 
 #. module: fleet
-#: code:addons/fleet/fleet.py:29
+#: code:addons/fleet/fleet.py:31
 #, python-format
 msgid "Emptying the odometer value of a vehicle is not allowed."
-msgstr "Gépjármű kilóméter óraállást nem szabad törölni."
+msgstr "Gépjármű kilométer óraállást nem szabad törölni."
 
 #. module: fleet
 #: model:fleet.service.type,name:fleet.type_service_18
@@ -635,7 +643,7 @@ msgstr "Motor választékok"
 #. module: fleet
 #: model:fleet.service.type,name:fleet.type_service_20
 msgid "Engine/Drive Belt(s) Replacement"
-msgstr "Motor/meghalytó szíj(ak) csere"
+msgstr "Motor/meghajtó szíj csere"
 
 #. module: fleet
 #: model:fleet.service.type,name:fleet.type_service_service_13
@@ -661,12 +669,12 @@ msgstr "Követők"
 #. module: fleet
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_message_channel_ids
 msgid "Followers (Channels)"
-msgstr ""
+msgstr "Követők (Csatornák)"
 
 #. module: fleet
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "Követők (Partnerek)"
 
 #. module: fleet
 #: model:ir.model.fields,help:fleet.field_fleet_vehicle_cost_cost_type
@@ -738,7 +746,7 @@ msgstr "Általános tulajdonságok"
 #. module: fleet
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_log_contract_generated_cost_ids
 msgid "Generated Costs"
-msgstr "Általános  költségek"
+msgstr "Generált költségek"
 
 #. module: fleet
 #: model:ir.ui.view,arch_db:fleet.fleet_vehicle_log_contract_form
@@ -752,7 +760,7 @@ msgstr "Generált visszatérő költségek"
 #: model:ir.ui.view,arch_db:fleet.fleet_vehicle_odometer_search
 #: model:ir.ui.view,arch_db:fleet.fleet_vehicle_search
 msgid "Group By"
-msgstr "Csoportosítás..."
+msgstr "Csoportosítás"
 
 #. module: fleet
 #: model:ir.ui.view,arch_db:fleet.fleet_vehicle_search
@@ -762,7 +770,7 @@ msgstr "Figyelmeztetése(i) van(ak)"
 #. module: fleet
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_contract_renewal_overdue
 msgid "Has Contracts Overdue"
-msgstr ""
+msgstr "Lejárt szerződése van"
 
 #. module: fleet
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_contract_renewal_due_soon
@@ -800,7 +808,7 @@ msgid ""
 "Here you can add refuelling entries for all vehicles.  You can\n"
 "                also filter logs of a particular vehicle using the search\n"
 "                field."
-msgstr ""
+msgstr "Itt tud az összes járműre üzemanyag feltöltési bevitelt végezni.  Szűrni\n                tud naplókat egy gépjárműre vonatkozóan a keresés mezőben."
 
 #. module: fleet
 #: model:ir.actions.act_window,help:fleet.fleet_vehicle_odometer_act
@@ -808,7 +816,7 @@ msgid ""
 "Here you can add various odometer entries for all vehicles.\n"
 "                You can also show odometer value for a particular vehicle using\n"
 "                the search field."
-msgstr ""
+msgstr "It meg tud adni különböző távolsági adatokat az összes járműre.\n                Meg tudja mutatni a távolsági érték adatokat a keresés mezőben kiválasztott járműre vonatkozólag."
 
 #. module: fleet
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_horsepower
@@ -833,7 +841,7 @@ msgstr "Hibrid"
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_log_contract_id
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_log_fuel_id
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_log_services_id
-#: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_model_brand_id_2813
+#: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_model_brand_id_2812
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_model_id
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_odometer_id
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_state_id
@@ -842,9 +850,13 @@ msgid "ID"
 msgstr "ID"
 
 #. module: fleet
-#: model:ir.model.fields,help:fleet.field_fleet_vehicle_message_needaction
 #: model:ir.model.fields,help:fleet.field_fleet_vehicle_message_unread
 msgid "If checked new messages require your attention."
+msgstr "Ha be van jelölve, akkor figyelje az új üzeneteket."
+
+#. module: fleet
+#: model:ir.model.fields,help:fleet.field_fleet_vehicle_message_needaction
+msgid "If checked, new messages require your attention."
 msgstr "Ha be van jelölve, akkor figyelje az új üzeneteket."
 
 #. module: fleet
@@ -871,18 +883,18 @@ msgstr "Következő szervízek beleszámítva"
 #: model:ir.ui.view,arch_db:fleet.fleet_vehicle_log_contract_form
 #: model:ir.ui.view,arch_db:fleet.fleet_vehicle_log_services_form
 msgid "Indicative Cost"
-msgstr "Előrelátható költségek"
+msgstr "Előrelátható költség"
 
 #. module: fleet
 #: model:ir.ui.menu,name:fleet.menu_fleet_reporting_indicative_costs
 #: model:ir.ui.view,arch_db:fleet.fleet_vehicle_costs_search
 msgid "Indicative Costs"
-msgstr "Előrelátható, jelzett költségek"
+msgstr "Előrelátható költségek"
 
 #. module: fleet
 #: model:ir.actions.act_window,name:fleet.action_fleet_reporting_costs_non_effective
 msgid "Indicative Costs Analysis"
-msgstr "Előrelátható jelzett költség analízis/elemzések"
+msgstr "Előrelátható költség analízis"
 
 #. module: fleet
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_log_contract_sum_cost
@@ -893,7 +905,7 @@ msgstr "Előrelátható összes költség"
 #. module: fleet
 #: model:ir.model,name:fleet.model_fleet_vehicle
 msgid "Information on a vehicle"
-msgstr "Egy gápármű információi"
+msgstr "Gépjármű információ"
 
 #. module: fleet
 #: model:fleet.service.type,name:fleet.type_service_30
@@ -914,7 +926,7 @@ msgstr "Számlahivatkozás"
 #. module: fleet
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "Követő"
 
 #. module: fleet
 #: selection:fleet.vehicle,odometer_unit:0
@@ -940,12 +952,12 @@ msgstr "Utolsó üzenet dátuma"
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_state___last_update
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_tag___last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Utolsó frissítés dátuma"
 
 #. module: fleet
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_odometer
 msgid "Last Odometer"
-msgstr "Utolsó kilóméteróra állás"
+msgstr "Utolsó kilométeróra állás"
 
 #. module: fleet
 #: model:ir.model.fields,field_description:fleet.field_fleet_contract_state_write_uid
@@ -977,12 +989,12 @@ msgstr "Utoljára frissítve, által"
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_tag_write_date
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_write_date
 msgid "Last Updated on"
-msgstr "Utoljára frissítve ekkor"
+msgstr "Utoljára frissítve"
 
 #. module: fleet
 #: model:fleet.service.type,name:fleet.type_contract_leasing
 msgid "Leasing"
-msgstr "Helyszín"
+msgstr "Lízing"
 
 #. module: fleet
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_license_plate
@@ -990,7 +1002,7 @@ msgid "License Plate"
 msgstr "Rendszám tábla"
 
 #. module: fleet
-#: code:addons/fleet/fleet.py:398
+#: code:addons/fleet/fleet.py:397
 #, python-format
 msgid "License Plate: from '%s' to '%s'"
 msgstr "Rendszám tábla: ettől '%s' eddig '%s'"
@@ -1039,12 +1051,12 @@ msgstr "Logó (kicsi)"
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_model_brand_name
 #: model:ir.ui.view,arch_db:fleet.fleet_vehicle_model_search
 msgid "Make"
-msgstr ""
+msgstr "Gyártmány"
 
 #. module: fleet
 #: model:ir.model.fields,help:fleet.field_fleet_vehicle_model_brand_id
 msgid "Make of the vehicle"
-msgstr ""
+msgstr "Gépjármű gyártmánya"
 
 #. module: fleet
 #: model:ir.actions.act_window,help:fleet.fleet_vehicle_log_contract_act
@@ -1052,7 +1064,7 @@ msgid ""
 "Manage all your contracts (leasing, insurances, etc.) with\n"
 "                their related services, costs. Odoo will automatically warn\n"
 "                you when some contracts have to be renewed."
-msgstr ""
+msgstr "Összes szerződés kezelése (lízing, biztosítások, stb.) a vonatkozó szolgáltatásokkal, költségekkel. Odoo rendszer automatikusan figyelmeztet a szerződés lejártára, meghosszabbítási idejére."
 
 #. module: fleet
 #: model:fleet.service.type,name:fleet.type_service_service_11
@@ -1070,17 +1082,17 @@ msgid "Manual"
 msgstr "Kézi"
 
 #. module: fleet
+#: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_model_brand_image_medium
+msgid "Medium-sized image"
+msgstr "Közepes méretű kép"
+
+#. module: fleet
 #: model:ir.model.fields,help:fleet.field_fleet_vehicle_model_brand_image_medium
 msgid ""
 "Medium-sized logo of the brand. It is automatically resized as a 128x128px "
 "image, with aspect ratio preserved. Use this field in form views or some "
 "kanban views."
 msgstr "Közepes-méretű logó a gyártmányról. Automatikusan átméretezett 128x128px képre, a méretarány megtartásával. A forma nézetekben használja ezt a mezőt és egyes kanban nézetben."
-
-#. module: fleet
-#: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_model_brand_image_medium
-msgid "Medium-sized photo"
-msgstr "Közepes méretű fotó"
 
 #. module: fleet
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_message_ids
@@ -1098,7 +1110,7 @@ msgid "Miles"
 msgstr "Mérföld"
 
 #. module: fleet
-#: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_model_id_2846
+#: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_model_id_2845
 #: model:ir.ui.view,arch_db:fleet.fleet_vehicle_model_form
 #: model:ir.ui.view,arch_db:fleet.fleet_vehicle_search
 msgid "Model"
@@ -1108,13 +1120,13 @@ msgstr "Model"
 #: model:ir.ui.view,arch_db:fleet.fleet_vehicle_model_brand_form
 #: model:ir.ui.view,arch_db:fleet.fleet_vehicle_model_brand_tree
 msgid "Model Make"
-msgstr ""
+msgstr "Gyártmány modell"
 
 #. module: fleet
 #: model:ir.actions.act_window,name:fleet.fleet_vehicle_model_brand_act
 #: model:ir.ui.menu,name:fleet.fleet_vehicle_model_brand_menu
 msgid "Model make of Vehicle"
-msgstr ""
+msgstr "Gépjármű gyártmány modellje"
 
 #. module: fleet
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_model_name
@@ -1127,12 +1139,12 @@ msgid "Model of a vehicle"
 msgstr "Egy gépjármű modellje"
 
 #. module: fleet
-#: model:ir.model.fields,help:fleet.field_fleet_vehicle_model_id_2846
+#: model:ir.model.fields,help:fleet.field_fleet_vehicle_model_id_2845
 msgid "Model of the vehicle"
 msgstr "Egy gépjármű modellje"
 
 #. module: fleet
-#: code:addons/fleet/fleet.py:387
+#: code:addons/fleet/fleet.py:386
 #, python-format
 msgid "Model: from '%s' to '%s'"
 msgstr "Modell: ettől '%s' eddig '%s'"
@@ -1171,23 +1183,13 @@ msgid "Name of contract to renew soon"
 msgstr "Nemsokára megújítandó szerződés neve"
 
 #. module: fleet
-#: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_message_needaction
-msgid "Need Action"
-msgstr ""
-
-#. module: fleet
-#: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_message_needaction_counter
-msgid "Need Action Counter"
-msgstr ""
-
-#. module: fleet
 #: selection:fleet.vehicle.log.contract,cost_frequency:0
 msgid "No"
 msgstr "Nem"
 
 #. module: fleet
-#: code:addons/fleet/fleet.py:386 code:addons/fleet/fleet.py:390
-#: code:addons/fleet/fleet.py:394 code:addons/fleet/fleet.py:397
+#: code:addons/fleet/fleet.py:385 code:addons/fleet/fleet.py:389
+#: code:addons/fleet/fleet.py:393 code:addons/fleet/fleet.py:396
 #, python-format
 msgid "None"
 msgstr "Nem"
@@ -1200,14 +1202,19 @@ msgid "Notes"
 msgstr "Jegyzetek"
 
 #. module: fleet
+#: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_message_needaction_counter
+msgid "Number of Actions"
+msgstr "Műveletek száma"
+
+#. module: fleet
 #: model:ir.model.fields,help:fleet.field_fleet_vehicle_doors
 msgid "Number of doors of the vehicle"
 msgstr "Gépjármú ajtóinak száma"
 
 #. module: fleet
 #: model:ir.model.fields,help:fleet.field_fleet_vehicle_message_needaction_counter
-msgid "Number of needaction messages"
-msgstr ""
+msgid "Number of messages which requires an action"
+msgstr "Üzenetek száma, melyek közbenjárást igényelnek"
 
 #. module: fleet
 #: model:ir.model.fields,help:fleet.field_fleet_vehicle_seats
@@ -1217,7 +1224,7 @@ msgstr "Gépjármű üléseinek száma"
 #. module: fleet
 #: model:ir.model.fields,help:fleet.field_fleet_vehicle_message_unread_counter
 msgid "Number of unread messages"
-msgstr ""
+msgstr "Olvasatlan üzenetek száma"
 
 #. module: fleet
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_cost_odometer_id
@@ -1227,24 +1234,24 @@ msgstr ""
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_odometer_count
 #: model:ir.ui.view,arch_db:fleet.fleet_vehicle_form
 msgid "Odometer"
-msgstr "Kilóméter óra"
+msgstr "Kilométeróra"
 
 #. module: fleet
 #: model:ir.ui.view,arch_db:fleet.fleet_vehicle_log_fuel_form
 #: model:ir.ui.view,arch_db:fleet.fleet_vehicle_log_services_form
 msgid "Odometer Details"
-msgstr "Kilóméter óra részletei"
+msgstr "Kilométeróra részletei"
 
 #. module: fleet
 #: model:ir.ui.view,arch_db:fleet.fleet_vehicle_odometer_form
 #: model:ir.ui.view,arch_db:fleet.fleet_vehicle_odometer_tree
 msgid "Odometer Logs"
-msgstr "Kilóméter óra naplók"
+msgstr "Kilométeróra naplói"
 
 #. module: fleet
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_odometer_unit
 msgid "Odometer Unit"
-msgstr "Kilóméter óra mértékegysége"
+msgstr "Kilométeróra mértékegysége"
 
 #. module: fleet
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_cost_odometer
@@ -1253,7 +1260,7 @@ msgstr "Kilóméter óra mértékegysége"
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_log_services_odometer
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_odometer_value
 msgid "Odometer Value"
-msgstr "Kilóméter óra értéke"
+msgstr "Kilométeróra állása"
 
 #. module: fleet
 #: model:ir.ui.view,arch_db:fleet.fleet_vehicle_odometer_graph
@@ -1263,12 +1270,12 @@ msgstr "Gépjárművenkénti kilóméter óra értékek"
 #. module: fleet
 #: model:ir.ui.view,arch_db:fleet.fleet_vehicle_log_contract_form
 msgid "Odometer details"
-msgstr "Kilóméter óra részletei"
+msgstr "Kilométeróra részletei"
 
 #. module: fleet
 #: model:ir.model,name:fleet.model_fleet_vehicle_odometer
 msgid "Odometer log for a vehicle"
-msgstr "Egy gépjárműre vonatkozó kilóméter óra napló"
+msgstr "Egy gépjárműre vonatkozó kilométeróra napló"
 
 #. module: fleet
 #: model:ir.model.fields,help:fleet.field_fleet_vehicle_cost_odometer
@@ -1281,7 +1288,7 @@ msgstr "Egy gépjárműre vonatkozó kilóméter óra napló"
 #: model:ir.model.fields,help:fleet.field_fleet_vehicle_log_services_odometer_id
 #: model:ir.model.fields,help:fleet.field_fleet_vehicle_odometer
 msgid "Odometer measure of the vehicle at the moment of this log"
-msgstr "A gépjármű kilóméter óra állása a napló mostani pillanatában"
+msgstr "A gépjármű kilométeróra állása a napló jelenlegi állapotában"
 
 #. module: fleet
 #: model:ir.actions.act_window,help:fleet.fleet_vehicle_log_services_act
@@ -1289,7 +1296,7 @@ msgid ""
 "Odoo helps you keeping track of all the services done\n"
 "                on your vehicle. Services can be of many type: occasional\n"
 "                repair, fixed maintenance, etc."
-msgstr ""
+msgstr "Odoo rendszer segít a járművön elvégzett szolgáltatások nyomon követésében.\n                Szolgáltatás sokféle típus lehet: véletlenszerű \n                javítás, fix karbantartás, stb."
 
 #. module: fleet
 #: model:ir.actions.act_window,help:fleet.fleet_vehicle_costs_act
@@ -1297,7 +1304,7 @@ msgid ""
 "Odoo helps you managing the costs for your different\n"
 "                vehicles. Costs are created automatically from services,\n"
 "                contracts (fixed or recurring) and fuel logs."
-msgstr ""
+msgstr "Odoo rendszer segít a járművei költségeinek nyomon követésében.\n                Költségeket automatikusan a szolgáltatásokból, \n                szerződésekből hozz létre (fix vagy visszatérő) és üzemanyag naplók."
 
 #. module: fleet
 #: model:ir.actions.act_window,help:fleet.action_fleet_reporting_costs
@@ -1305,14 +1312,14 @@ msgstr ""
 msgid ""
 "Odoo helps you managing the costs for your different vehicles\n"
 "          Costs are generally created from services and contract and appears here."
-msgstr ""
+msgstr "Odoo rendszer segít a járművei költségeinek nyomon követésében.\n                Költségeket általában a szolgáltatásokból és                 szerződésekből hozz létre és itt tűnnek fel."
 
 #. module: fleet
 #: model:ir.actions.act_window,help:fleet.fleet_vehicle_act
 msgid ""
 "Odoo will warn you when services or contract have to be\n"
 "                renewed."
-msgstr ""
+msgstr "Odoo rendszer értesíti, ha szolgáltatást vagy szerződést meg kell újítani."
 
 #. module: fleet
 #: model:fleet.service.type,name:fleet.type_service_31
@@ -1332,7 +1339,7 @@ msgstr "Mindenféle"
 #. module: fleet
 #: model:ir.actions.client,name:fleet.action_fleet_menu
 msgid "Open Fleet Menu"
-msgstr "Flotta nyitás menü"
+msgstr "Flotta menü megnyitása"
 
 #. module: fleet
 #: model:fleet.service.type,name:fleet.type_service_service_16
@@ -1352,7 +1359,7 @@ msgstr "Egyéb karbantartás"
 #. module: fleet
 #: model:fleet.service.type,name:fleet.type_service_34
 msgid "Oxygen Sensor Replacement"
-msgstr "Oxygen érzékelő csere"
+msgstr "Oxigén érzékelő csere"
 
 #. module: fleet
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_cost_parent_id
@@ -1441,7 +1448,7 @@ msgid "Refueling Details"
 msgstr "Tankolás részletei"
 
 #. module: fleet
-#: code:addons/fleet/fleet.py:721
+#: code:addons/fleet/fleet.py:720
 #: model:ir.actions.act_window,name:fleet.act_renew_contract
 #: model:ir.ui.view,arch_db:fleet.fleet_vehicle_log_contract_form
 #, python-format
@@ -1451,7 +1458,7 @@ msgstr "Szerződés újrakötése"
 #. module: fleet
 #: model:fleet.service.type,name:fleet.type_service_service_12
 msgid "Rent (Excluding VAT)"
-msgstr "Bérlés (ÁFA nélkül)"
+msgstr "Bérleti díj (ÁFA nélkül)"
 
 #. module: fleet
 #: model:fleet.service.type,name:fleet.type_service_service_8
@@ -1481,7 +1488,7 @@ msgstr "Maradvány érték (ÁFA nélkül)"
 #. module: fleet
 #: model:fleet.service.type,name:fleet.type_service_service_19
 msgid "Residual value in %"
-msgstr "Maradvány érték %-an"
+msgstr "Maradvány érték %"
 
 #. module: fleet
 #: model:fleet.service.type,name:fleet.type_service_38
@@ -1518,7 +1525,7 @@ msgstr "Szolgáltatás"
 #. module: fleet
 #: model:ir.ui.view,arch_db:fleet.fleet_vehicle_log_services_form
 msgid "Service Type"
-msgstr "Szolgáltatástípus"
+msgstr "Szolgáltatás típus"
 
 #. module: fleet
 #: model:ir.actions.act_window,name:fleet.fleet_vehicle_service_types_act
@@ -1529,7 +1536,7 @@ msgstr "Szolgáltatás típusok"
 #. module: fleet
 #: model:ir.ui.view,arch_db:fleet.fleet_vehicle_service_types_tree
 msgid "Service types"
-msgstr "Szolgáltatástípusok"
+msgstr "Szolgáltatás típusok"
 
 #. module: fleet
 #: selection:fleet.vehicle.cost,cost_type:0
@@ -1546,7 +1553,7 @@ msgstr "Szolgáltatások havi költségei"
 #. module: fleet
 #: model:ir.ui.view,arch_db:fleet.fleet_vehicle_log_services_form
 msgid "Services Details"
-msgstr "Szeolgáltatások részletei"
+msgstr "Szolgáltatások részletei"
 
 #. module: fleet
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_log_services
@@ -1568,16 +1575,16 @@ msgstr "Szerződés beállítása folyamatban"
 
 #. module: fleet
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_model_brand_image_small
-msgid "Smal-sized photo"
-msgstr "Kis-méretű fotó"
+msgid "Small-sized image"
+msgstr "Kis méretű kép"
 
 #. module: fleet
 #: model:ir.model.fields,help:fleet.field_fleet_vehicle_model_brand_image_small
 msgid ""
-"Small-sized photo of the brand. It is automatically resized as a 64x64px "
+"Small-sized logo of the brand. It is automatically resized as a 64x64px "
 "image, with aspect ratio preserved. Use this field anywhere a small image is"
 " required."
-msgstr "Kis-méretű fotó a márkáról. Automatikusan átméretezve 64x64px képpé, az arány megtartása mellett. Ezt a mezőt ott használja ahol a kis képre van szüksége."
+msgstr "Kis-méretű logó a márkáról. Automatikusan átméretezve 64x64px képpé, az arány megtartása mellett. Ezt a mezőt ott használja ahol a kis képre van szüksége."
 
 #. module: fleet
 #: model:fleet.service.type,name:fleet.type_service_service_6
@@ -1595,7 +1602,7 @@ msgid "Starter Replacement"
 msgstr "Önindító csere"
 
 #. module: fleet
-#: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_state_id_2864
+#: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_state_id_2863
 #: model:ir.ui.view,arch_db:fleet.fleet_vehicle_state_tree
 msgid "State"
 msgstr "Állapot"
@@ -1603,13 +1610,13 @@ msgstr "Állapot"
 #. module: fleet
 #: sql_constraint:fleet.vehicle.state:0
 msgid "State name already exists"
-msgstr "Állam/megye név már létezik"
+msgstr "Állapot név már létezik"
 
 #. module: fleet
-#: code:addons/fleet/fleet.py:395
+#: code:addons/fleet/fleet.py:394
 #, python-format
 msgid "State: from '%s' to '%s'"
-msgstr "Állam/megye: ettől '%s' eddig '%s'"
+msgstr "Állapot: ettől '%s' eddig '%s'"
 
 #. module: fleet
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_log_contract_state
@@ -1626,7 +1633,7 @@ msgstr "Nyári gumi"
 #. module: fleet
 #: sql_constraint:fleet.vehicle.tag:0
 msgid "Tag name already exists !"
-msgstr ""
+msgstr "Címke név már létezik!"
 
 #. module: fleet
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_tag_ids
@@ -1660,7 +1667,7 @@ msgstr "Kikötések és feltételek"
 msgid ""
 "Thanks to the different filters, Odoo can only print the effective\n"
 "          costs, sort them by type and by vehicle."
-msgstr ""
+msgstr "Köszönöm a különböző szűrőket, Odoo rendszer csak a tényleges költséget tudja  \n          nyomtatni, típus és jármű szerinti csoportosításban."
 
 #. module: fleet
 #: model:fleet.service.type,name:fleet.type_service_43
@@ -1770,7 +1777,7 @@ msgstr "Gépjármű motorjára írt egyedi motorszám (VIN/SN szám)"
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_log_contract_odometer_unit
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_log_fuel_odometer_unit
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_log_services_odometer_unit
-#: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_odometer_unit_2879
+#: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_odometer_unit_2878
 msgid "Unit"
 msgstr "Egység"
 
@@ -1787,7 +1794,7 @@ msgstr "Olvasatlan üzenetek"
 #. module: fleet
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_message_unread_counter
 msgid "Unread Messages Counter"
-msgstr ""
+msgstr "Olvasatlan üzenetek számlálója"
 
 #. module: fleet
 #: model:ir.model.fields,help:fleet.field_fleet_vehicle_state_sequence
@@ -1846,7 +1853,7 @@ msgstr "Gépjármű modell"
 #: model:ir.actions.act_window,name:fleet.fleet_vehicle_state_act
 #: model:ir.ui.menu,name:fleet.fleet_vehicle_state_menu
 msgid "Vehicle Status"
-msgstr "Gépjármű állapotok"
+msgstr "Gépjármű állapot"
 
 #. module: fleet
 #: model:ir.model.fields,help:fleet.field_fleet_vehicle_cost_vehicle_id
@@ -1885,7 +1892,7 @@ msgstr "Gépjárművek fogyasztási naplói"
 #: model:ir.actions.act_window,name:fleet.fleet_vehicle_odometer_act
 #: model:ir.ui.menu,name:fleet.fleet_vehicle_odometer_menu
 msgid "Vehicles Odometer"
-msgstr "Gépjárművek kilóméter órái"
+msgstr "Gépjárművek kilométer órái"
 
 #. module: fleet
 #: model:ir.actions.act_window,name:fleet.fleet_vehicle_log_services_act
@@ -1913,7 +1920,7 @@ msgstr "Gépjárművek kilóméter órái"
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_log_fuel_vendor_id
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_log_services_vendor_id
 msgid "Vendor"
-msgstr ""
+msgstr "Kereskedő"
 
 #. module: fleet
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_model_vendors
@@ -1986,12 +1993,12 @@ msgstr "Évente"
 msgid ""
 "You can customize available status to track the evolution of\n"
 "                each vehicle. Example: Active, Being Repaired, Sold."
-msgstr ""
+msgstr "Elérhető állapotot személyre szabhatja az összes jármű történetének \n                nyomon követéséhez. Pl.: Aktív, Szervizben, Eladva."
 
 #. module: fleet
 #: model:ir.actions.act_window,help:fleet.fleet_vehicle_model_act
 msgid "You can define several models (e.g. A3, A4) for each make (Audi)."
-msgstr ""
+msgstr "Különböző modellt határozhat meg (pl.. A3, A4) mindegyik gyártmányhoz (Audi)."
 
 #. module: fleet
 #: model:ir.actions.act_window,help:fleet.fleet_vehicle_act
@@ -1999,7 +2006,7 @@ msgid ""
 "You will be able to manage your fleet by keeping track of the\n"
 "                contracts, services, fixed and recurring costs, odometers and\n"
 "                fuel logs associated to each vehicle."
-msgstr ""
+msgstr "Kezelheti a flottáját a szerződések  \n                szolgáltatások, fix és visszatérő költségek, egyes \n                járművekhez tartozó óraállás és\n                üzemanyag napló  nyomon követésével."
 
 #. module: fleet
 #: model:ir.ui.view,arch_db:fleet.fleet_vehicle_log_contract_form
@@ -2015,22 +2022,22 @@ msgstr "és"
 #: model:ir.ui.view,arch_db:fleet.fleet_vehicle_form
 #: model:ir.ui.view,arch_db:fleet.fleet_vehicle_model_form
 msgid "e.g. Model S"
-msgstr ""
+msgstr "pl. Model S"
 
 #. module: fleet
 #: model:ir.ui.view,arch_db:fleet.fleet_vehicle_form
 msgid "e.g. PAE 326"
-msgstr ""
+msgstr "pl. PAE 326"
 
 #. module: fleet
 #: model:ir.ui.view,arch_db:fleet.fleet_vehicle_model_form
 msgid "e.g. Tesla"
-msgstr ""
+msgstr "pl. Tesla"
 
 #. module: fleet
 #: model:ir.model,name:fleet.model_fleet_vehicle_state
 msgid "fleet.vehicle.state"
-msgstr ""
+msgstr "Állapot"
 
 #. module: fleet
 #: model:ir.model,name:fleet.model_fleet_vehicle_tag
@@ -2040,7 +2047,7 @@ msgstr "Címkék"
 #. module: fleet
 #: model:ir.ui.view,arch_db:fleet.fleet_vehicle_kanban
 msgid "other(s)"
-msgstr "egyéb(k)"
+msgstr "egyéb"
 
 #. module: fleet
 #: model:ir.ui.view,arch_db:fleet.fleet_vehicle_form

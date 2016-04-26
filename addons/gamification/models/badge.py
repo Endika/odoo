@@ -21,9 +21,9 @@ class gamification_badge_user(osv.Model):
     _rec_name = "badge_name"
 
     _columns = {
-        'user_id': fields.many2one('res.users', string="User", required=True, ondelete="cascade"),
+        'user_id': fields.many2one('res.users', string="User", required=True, ondelete="cascade", select=True),
         'sender_id': fields.many2one('res.users', string="Sender", help="The user who has send the badge"),
-        'badge_id': fields.many2one('gamification.badge', string='Badge', required=True, ondelete="cascade"),
+        'badge_id': fields.many2one('gamification.badge', string='Badge', required=True, ondelete="cascade", select=True),
         'challenge_id': fields.many2one('gamification.challenge', string='Challenge originating', help="If this badge was rewarded through a challenge"),
         'comment': fields.text('Comment'),
         'badge_name': fields.related('badge_id', 'name', type="char", string="Badge Name"),
@@ -132,8 +132,9 @@ class gamification_badge(osv.Model):
 
     _columns = {
         'name': fields.char('Badge', required=True, translate=True),
-        'description': fields.text('Description'),
-        'image': fields.binary("Image", help="This field holds the image used for the badge, limited to 256x256"),
+        'description': fields.text('Description', translate=True),
+        'image': fields.binary("Image", attachment=True,
+            help="This field holds the image used for the badge, limited to 256x256"),
         'rule_auth': fields.selection([
                 ('everyone', 'Everyone'),
                 ('users', 'A selected list of users'),
@@ -181,12 +182,12 @@ class gamification_badge(osv.Model):
 
         'stat_count': fields.function(_get_owners_info, string='Total',
             type="integer",
-            multi='unique_users',
+            multi='stat_users',
             help="The number of time this badge has been received."),
         'stat_count_distinct': fields.function(_get_owners_info,
             type="integer",
             string='Number of users',
-            multi='unique_users',
+            multi='stat_users',
             help="The number of time this badge has been received by unique users."),
         'stat_this_month': fields.function(_get_badge_user_stats,
             type="integer",

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-14 10:27+0000\n"
-"PO-Revision-Date: 2015-09-07 17:50+0000\n"
+"POT-Creation-Date: 2015-09-18 08:11+0000\n"
+"PO-Revision-Date: 2016-01-15 08:23+0000\n"
 "Last-Translator: Martin Trigaux\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/odoo/odoo-9/language/nb/)\n"
 "MIME-Version: 1.0\n"
@@ -42,6 +42,11 @@ msgstr "%s (kopi)"
 #: model:ir.ui.view,arch_db:crm_claim.crm_case_claims_form_view
 msgid "Action Description..."
 msgstr ""
+
+#. module: crm_claim
+#: model:ir.model.fields,field_description:crm_claim.field_crm_claim_message_needaction
+msgid "Action Needed"
+msgstr "Handling"
 
 #. module: crm_claim
 #: model:ir.model.fields,field_description:crm_claim.field_crm_claim_report_type_action
@@ -258,7 +263,7 @@ msgstr "Dato lukket"
 #. module: crm_claim
 #: model:ir.model.fields,help:crm_claim.field_crm_claim_message_last_post
 msgid "Date of the last message posted on the record."
-msgstr ""
+msgstr "Dato for siste melding på denne posten."
 
 #. module: crm_claim
 #: model:ir.ui.view,arch_db:crm_claim.crm_case_claims_form_view
@@ -357,10 +362,14 @@ msgid "ID"
 msgstr "ID"
 
 #. module: crm_claim
-#: model:ir.model.fields,help:crm_claim.field_crm_claim_message_needaction
 #: model:ir.model.fields,help:crm_claim.field_crm_claim_message_unread
 msgid "If checked new messages require your attention."
 msgstr "Hvis det er merket nye meldinger så krever dette din oppmerksomhet."
+
+#. module: crm_claim
+#: model:ir.model.fields,help:crm_claim.field_crm_claim_message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
 
 #. module: crm_claim
 #: model:ir.model.fields,help:crm_claim.field_crm_claim_stage_case_default
@@ -382,7 +391,7 @@ msgstr ""
 #. module: crm_claim
 #: model:ir.model.fields,field_description:crm_claim.field_crm_claim_message_last_post
 msgid "Last Message Date"
-msgstr ""
+msgstr "Siste meldingsdato"
 
 #. module: crm_claim
 #: model:ir.model.fields,field_description:crm_claim.field_crm_claim___last_update
@@ -390,7 +399,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:crm_claim.field_crm_claim_report___last_update
 #: model:ir.model.fields,field_description:crm_claim.field_crm_claim_stage___last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Sist oppdatert "
 
 #. module: crm_claim
 #: model:ir.model.fields,field_description:crm_claim.field_crm_claim_category_write_uid
@@ -448,16 +457,6 @@ msgid "Name"
 msgstr "Navn"
 
 #. module: crm_claim
-#: model:ir.model.fields,field_description:crm_claim.field_crm_claim_message_needaction
-msgid "Need Action"
-msgstr ""
-
-#. module: crm_claim
-#: model:ir.model.fields,field_description:crm_claim.field_crm_claim_message_needaction_counter
-msgid "Need Action Counter"
-msgstr ""
-
-#. module: crm_claim
 #: model:crm.claim.stage,name:crm_claim.stage_claim1
 msgid "New"
 msgstr "Ny"
@@ -484,19 +483,24 @@ msgid "Normal"
 msgstr "Normal"
 
 #. module: crm_claim
+#: model:ir.model.fields,field_description:crm_claim.field_crm_claim_message_needaction_counter
+msgid "Number of Actions"
+msgstr "Antall handlinger"
+
+#. module: crm_claim
 #: model:ir.model.fields,help:crm_claim.field_crm_claim_report_delay_close
 msgid "Number of Days to close the case"
 msgstr "Antall dager til sak lukkes."
 
 #. module: crm_claim
 #: model:ir.model.fields,help:crm_claim.field_crm_claim_message_needaction_counter
-msgid "Number of needaction messages"
-msgstr ""
+msgid "Number of messages which requires an action"
+msgstr "Antall meldinger som krever handling"
 
 #. module: crm_claim
 #: model:ir.model.fields,help:crm_claim.field_crm_claim_message_unread_counter
 msgid "Number of unread messages"
-msgstr ""
+msgstr "Antall uleste meldinger"
 
 #. module: crm_claim
 #: model:ir.model.fields,field_description:crm_claim.field_crm_claim_report_delay_expected
@@ -635,7 +639,7 @@ msgstr ""
 
 #. module: crm_claim
 #: model:ir.model.fields,field_description:crm_claim.field_crm_claim_report_stage_id
-#: model:ir.model.fields,field_description:crm_claim.field_crm_claim_stage_id_8907
+#: model:ir.model.fields,field_description:crm_claim.field_crm_claim_stage_id_8819
 #: model:ir.ui.view,arch_db:crm_claim.view_crm_case_claims_filter
 #: model:ir.ui.view,arch_db:crm_claim.view_report_crm_claim_filter
 msgid "Stage"
@@ -723,12 +727,12 @@ msgstr "Overvåkere E-poster."
 #. module: crm_claim
 #: model:ir.model.fields,field_description:crm_claim.field_crm_claim_website_message_ids
 msgid "Website Messages"
-msgstr ""
+msgstr "Meldinger fra Nettsted"
 
 #. module: crm_claim
 #: model:ir.model.fields,help:crm_claim.field_crm_claim_website_message_ids
 msgid "Website communication history"
-msgstr ""
+msgstr "Historikk for kommuniksjon på nettsted"
 
 #. module: crm_claim
 #: model:ir.filters,name:crm_claim.filter_report_crm_claim_workload

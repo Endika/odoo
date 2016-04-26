@@ -3,12 +3,14 @@
 # * account_budget
 # 
 # Translators:
+# Dan Cojocaru <dan@lightcom.ro>, 2015
+# Martin Trigaux, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-07 14:40+0000\n"
-"PO-Revision-Date: 2015-09-07 15:51+0000\n"
+"POT-Creation-Date: 2015-09-18 08:11+0000\n"
+"PO-Revision-Date: 2016-01-06 09:22+0000\n"
 "Last-Translator: Martin Trigaux\n"
 "Language-Team: Romanian (http://www.transifex.com/odoo/odoo-9/language/ro/)\n"
 "MIME-Version: 1.0\n"
@@ -21,46 +23,46 @@ msgstr ""
 #: model:ir.ui.view,arch_db:account_budget.report_budget
 #: model:ir.ui.view,arch_db:account_budget.report_crossoveredbudget
 msgid "<strong>Analysis from:</strong>"
-msgstr ""
+msgstr "<strong>Analiza de la:</strong>"
 
 #. module: account_budget
 #: model:ir.ui.view,arch_db:account_budget.report_analyticaccountbudget
 msgid "<strong>Analysis from</strong>"
-msgstr ""
+msgstr "<strong>Analiza de la:</strong>"
 
 #. module: account_budget
 #: model:ir.ui.view,arch_db:account_budget.report_analyticaccountbudget
 msgid "<strong>Analytic Account</strong>"
-msgstr ""
+msgstr "<strong>Cont analitic</strong>"
 
 #. module: account_budget
 #: model:ir.ui.view,arch_db:account_budget.report_budget
 #: model:ir.ui.view,arch_db:account_budget.report_crossoveredbudget
 msgid "<strong>Budget:</strong>"
-msgstr ""
+msgstr "<strong> Buget: </strong>"
 
 #. module: account_budget
 #: model:ir.ui.view,arch_db:account_budget.report_budget
 #: model:ir.ui.view,arch_db:account_budget.report_crossoveredbudget
 msgid "<strong>Currency:</strong>"
-msgstr ""
+msgstr "<strong> Moneda: </strong>"
 
 #. module: account_budget
 #: model:ir.ui.view,arch_db:account_budget.report_analyticaccountbudget
 msgid "<strong>Currency</strong>"
-msgstr ""
+msgstr "<strong>Moneda</strong>"
 
 #. module: account_budget
 #: model:ir.ui.view,arch_db:account_budget.report_budget
 msgid "<strong>Printed at:</strong>"
-msgstr ""
+msgstr "<strong>Tiparit la:</strong>"
 
 #. module: account_budget
 #: model:ir.ui.view,arch_db:account_budget.report_analyticaccountbudget
 #: model:ir.ui.view,arch_db:account_budget.report_budget
 #: model:ir.ui.view,arch_db:account_budget.report_crossoveredbudget
 msgid "<strong>Total:</strong>"
-msgstr ""
+msgstr "<strong> Total: </strong>"
 
 #. module: account_budget
 #: model:ir.actions.act_window,help:account_budget.act_crossovered_budget_view
@@ -96,6 +98,11 @@ msgstr "Conturi"
 #. module: account_budget
 #: model:ir.model.fields,field_description:account_budget.field_crossovered_budget_lines_percentage
 msgid "Achievement"
+msgstr ""
+
+#. module: account_budget
+#: model:ir.model.fields,field_description:account_budget.field_crossovered_budget_message_needaction
+msgid "Action Needed"
 msgstr ""
 
 #. module: account_budget
@@ -150,6 +157,7 @@ msgstr "Linii buget"
 
 #. module: account_budget
 #: model:ir.model.fields,field_description:account_budget.field_crossovered_budget_name
+#: model:ir.ui.view,arch_db:account_budget.crossovered_budget_view_form
 msgid "Budget Name"
 msgstr ""
 
@@ -210,7 +218,7 @@ msgstr "Anulat(a)"
 #. module: account_budget
 #: model:ir.actions.act_window,help:account_budget.act_crossovered_budget_view
 msgid "Click to create a new budget."
-msgstr ""
+msgstr "Click aici pentru a crea un buget nou."
 
 #. module: account_budget
 #: model:ir.model.fields,field_description:account_budget.field_account_budget_post_company_id
@@ -275,7 +283,7 @@ msgstr "Descriere"
 #: model:ir.model.fields,field_description:account_budget.field_report_account_budget_report_budget_display_name
 #: model:ir.model.fields,field_description:account_budget.field_report_account_budget_report_crossoveredbudget_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Afiseaza nume"
 
 #. module: account_budget
 #: selection:crossovered.budget,state:0
@@ -338,10 +346,14 @@ msgid "ID"
 msgstr "ID"
 
 #. module: account_budget
-#: model:ir.model.fields,help:account_budget.field_crossovered_budget_message_needaction
 #: model:ir.model.fields,help:account_budget.field_crossovered_budget_message_unread
 msgid "If checked new messages require your attention."
 msgstr "Dacă este selectat, mesajele noi necesită atenția dumneavoastră."
+
+#. module: account_budget
+#: model:ir.model.fields,help:account_budget.field_crossovered_budget_message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
 
 #. module: account_budget
 #: model:ir.model.fields,field_description:account_budget.field_crossovered_budget_message_is_follower
@@ -365,7 +377,7 @@ msgstr "Data ultimului mesaj"
 #: model:ir.model.fields,field_description:account_budget.field_report_account_budget_report_budget___last_update
 #: model:ir.model.fields,field_description:account_budget.field_report_account_budget_report_crossoveredbudget___last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Ultima modificare la"
 
 #. module: account_budget
 #: model:ir.model.fields,field_description:account_budget.field_account_budget_analytic_write_uid
@@ -405,18 +417,13 @@ msgid "Name"
 msgstr "Nume"
 
 #. module: account_budget
-#: model:ir.model.fields,field_description:account_budget.field_crossovered_budget_message_needaction
-msgid "Need Action"
-msgstr ""
-
-#. module: account_budget
 #: model:ir.model.fields,field_description:account_budget.field_crossovered_budget_message_needaction_counter
-msgid "Need Action Counter"
+msgid "Number of Actions"
 msgstr ""
 
 #. module: account_budget
 #: model:ir.model.fields,help:account_budget.field_crossovered_budget_message_needaction_counter
-msgid "Number of needaction messages"
+msgid "Number of messages which requires an action"
 msgstr ""
 
 #. module: account_budget
