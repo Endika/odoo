@@ -630,7 +630,10 @@ ListView.include(/** @lends instance.web.ListView# */{
             if (saveInfo.created) {
                 return self.start_edition();
             }
-            var record = self.records[next_record](saveInfo.record, {wraparound: true});
+            var record = self.records[next_record](saveInfo.record);
+            if (record === undefined) {
+                return self.start_edition();
+            }
             return self.start_edition(record, options);
         });
     },
@@ -721,13 +724,13 @@ ListView.include(/** @lends instance.web.ListView# */{
     keyup_UP: function (e) {
         var self = this;
         return this._key_move_record(e, 'pred', function (el, cursor) {
-            return self._at_start(cursor, el);
+            return self._at_start(cursor, el) && !$(el).is('select,.ui-autocomplete-input');
         });
     },
     keyup_DOWN: function (e) {
         var self = this;
         return this._key_move_record(e, 'succ', function (el, cursor) {
-            return self._at_end(cursor, el);
+            return self._at_end(cursor, el) && !$(el).is('select,.ui-autocomplete-input');
         });
     },
 

@@ -303,7 +303,14 @@ class StockPicking(models.Model):
                     break
             picking.sale_id = sale_order.id if sale_order else False
 
-    sale_id = fields.Many2one(comodel_name='sale.order', string="Sale Order", compute='_compute_sale_id')
+    def _search_sale_id(self, operator, value):
+        moves = self.env['stock.move'].search(
+            [('picking_id', '!=', False), ('procurement_id.sale_line_id.order_id', operator, value)]
+        )
+        return [('id', 'in', moves.mapped('picking_id').ids)]
+
+    sale_id = fields.Many2one(comodel_name='sale.order', string="Sale Order",
+                              compute='_compute_sale_id', search='_search_sale_id')
 
 
 class AccountInvoiceLine(models.Model):
@@ -327,26 +334,30 @@ class AccountInvoiceLine(models.Model):
                 # Go through all the moves and do nothing until you get to qty_done
                 # Beyond qty_done we need to calculate the average of the price_unit
                 # on the moves we encounter.
-                average_price_unit = 0
-                qty_delivered = 0
-                invoiced_qty = 0
-                for move in moves:
-                    if move.state != 'done':
-                        continue
-                    invoiced_qty += move.product_qty
-                    if invoiced_qty <= qty_done:
-                        continue
-                    qty_to_consider = move.product_qty
-                    if invoiced_qty - move.product_qty < qty_done:
-                        qty_to_consider = invoiced_qty - qty_done
-                    qty_to_consider = min(qty_to_consider, quantity - qty_delivered)
-                    qty_delivered += qty_to_consider
-                    average_price_unit = (average_price_unit * (qty_delivered - qty_to_consider) + move.price_unit * qty_to_consider) / qty_delivered
-                    if qty_delivered == quantity:
-                        break
+                average_price_unit = self._compute_average_price(qty_done, quantity, moves)
                 price_unit = average_price_unit or price_unit
                 price_unit = uom_obj._compute_qty_obj(self.uom_id, price_unit, self.product_id.uom_id, round=False)
         return price_unit
+
+    def _compute_average_price(self, qty_done, quantity, moves):
+        average_price_unit = 0
+        qty_delivered = 0
+        invoiced_qty = 0
+        for move in moves:
+            if move.state != 'done':
+                continue
+            invoiced_qty += move.product_qty
+            if invoiced_qty <= qty_done:
+                continue
+            qty_to_consider = move.product_qty
+            if invoiced_qty - move.product_qty < qty_done:
+                qty_to_consider = invoiced_qty - qty_done
+            qty_to_consider = min(qty_to_consider, quantity - qty_delivered)
+            qty_delivered += qty_to_consider
+            average_price_unit = (average_price_unit * (qty_delivered - qty_to_consider) + move.price_unit * qty_to_consider) / qty_delivered
+            if qty_delivered == quantity:
+                break
+        return average_price_unit
 
 
 class ProductProduct(models.Model):
